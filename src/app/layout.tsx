@@ -52,7 +52,7 @@ export default function RootLayout({
             maskImage: "linear-gradient(180deg, #000000 20%, transparent 100%)",
             maskSize: "100% 100%",
           }}
-          className="min-w-0 w-full h-20 fixed top-0 z-10"
+          className="min-w-0 w-full h-20 fixed top-0 z-20"
         ></div>
         <Header />
         {children}
