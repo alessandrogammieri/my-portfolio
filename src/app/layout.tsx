@@ -43,7 +43,7 @@ export default function RootLayout({
             ></div>
           </div>
         </div>
-        <div className="min-h-5 min-w-0 w-full relative"></div>
+        <div className="min-h-4 min-w-0 w-full relative"></div>
         <div
           style={{
             backdropFilter: "blur(.5rem)",
