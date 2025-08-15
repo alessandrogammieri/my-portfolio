@@ -11,7 +11,7 @@ export default function Header() {
         <Navigation />
       </div>
       <div className="min-w-0 w-full flex justify-end items-center">
-        {/* <LiveTime></LiveTime> */}
+        <LiveTime></LiveTime>
       </div>
     </header>
   );
