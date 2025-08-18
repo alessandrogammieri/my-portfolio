@@ -1,5 +1,7 @@
 export const metadata = {
-  title: "Works | Alessandro Gammieri - Full Stack Developer & Web Architect",
+  title: {
+    default: "Works",
+  },
   description:
     "In questa sezione condivido alcuni dei progetti a cui ho lavorato. Amo sviluppare applicazioni web su misura, combinando design intuitivo e tecnologie moderne come Node.js e React.",
 };

@@ -9,7 +9,11 @@ export const generateMetadata = async ({
 }: Props): Promise<Metadata> => {
   const slug = (await params).slug;
   return {
-    title: `Post | ${slug}`,
+    title: {
+      default: `Post: ${slug}`,
+      template:
+        "%s | Alessandro Gammieri - Full Stack Developer & Web Architect",
+    },
     description: `This is the post page for ${slug}.`,
   };
 };

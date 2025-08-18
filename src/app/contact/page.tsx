@@ -1,5 +1,7 @@
 export const metadata = {
-  title: "Contact | Alessandro Gammieri - Full Stack Developer & Web Architect",
+  title: {
+    default: "Contact",
+  },
   description:
     "Offro consulenza e sviluppo su misura per applicazioni web moderne. Prenota una call per discutere del tuo progetto e delle tecnologie più adatte.",
 };

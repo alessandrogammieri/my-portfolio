@@ -28,7 +28,9 @@ export default function Navigation() {
     <div className="flex justify-center relative z-10 shadow-lg bg-background border border-[#9595951A] rounded-3xl p-1">
       <nav className="flex items-center gap-2">
         {navigationItems.map((item, index) => {
-          const isActive = pathname === item.href;
+          const isActive =
+            pathname === item.href ||
+            (pathname.startsWith(item.href) && item.href !== "/");
           const Icon = item.icon;
 
           return (

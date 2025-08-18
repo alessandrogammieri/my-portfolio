@@ -1,5 +1,7 @@
 export const metadata = {
-  title: "Blog | Alessandro Gammieri - Full Stack Developer & Web Architect",
+  title: {
+    default: "Blog",
+  },
   description:
     "Nel mio blog condivido articoli e risorse sullo sviluppo web moderno. Condivido esperienze e soluzioni pratiche per chi lavora con tecnologie moderne come Node.js, Next.js e React.",
 };

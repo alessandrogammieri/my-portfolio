@@ -10,7 +10,10 @@ const prompt = Prompt({
 });
 
 export const metadata: Metadata = {
-  title: "Alessandro Gammieri | Full Stack Developer & Web Architect",
+  title: {
+    default: "Alessandro Gammieri | Full Stack Developer & Web Architect",
+    template: "%s | Alessandro Gammieri - Full Stack Developer & Web Architect",
+  },
   description:
     "Sviluppatore full stack specializzato in applicazioni web moderne e performanti. Creo soluzioni digitali su misura con tecnologie all'avanguardia come Node.js, Next.js e React.",
 };
