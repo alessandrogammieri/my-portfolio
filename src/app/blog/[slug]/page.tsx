@@ -1,8 +1,20 @@
-export default async function Post({
-  params,
-}: {
+import { Metadata } from "next";
+
+type Props = {
   params: Promise<{ slug: string }>;
-}) {
+};
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const slug = (await params).slug;
+  return {
+    title: `Post | ${slug}`,
+    description: `This is the post page for ${slug}.`,
+  };
+};
+
+export default async function Post({ params }: Props) {
   const slug = (await params).slug;
 
   return (
