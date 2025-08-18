@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const prompt = Prompt({
   variable: "--font-prompt",
@@ -59,6 +60,7 @@ export default function RootLayout({
         ></div>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

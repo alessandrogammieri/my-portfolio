@@ -3,26 +3,29 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 import {
-  HomeIcon,
-  UserCircleIcon,
-  Squares2X2Icon,
-  BookOpenIcon,
-  EnvelopeIcon,
-  SunIcon,
-} from "@heroicons/react/24/outline";
+  HiOutlineHome,
+  HiOutlineUserCircle,
+  HiOutlineSquares2X2,
+  HiOutlineBookOpen,
+  HiOutlineEnvelope,
+  HiOutlineSun,
+  HiOutlineMoon,
+} from "react-icons/hi2";
 
 const navigationItems = [
-  { href: "/", label: "", icon: HomeIcon },
-  { href: "/about", label: "About", icon: UserCircleIcon },
-  { href: "/works", label: "Works", icon: Squares2X2Icon },
-  { href: "/blog", label: "Blog", icon: BookOpenIcon },
-  { href: "/contact", label: "Contact", icon: EnvelopeIcon },
+  { href: "/", label: "", icon: HiOutlineHome },
+  { href: "/about", label: "About", icon: HiOutlineUserCircle },
+  { href: "/works", label: "Works", icon: HiOutlineSquares2X2 },
+  { href: "/blog", label: "Blog", icon: HiOutlineBookOpen },
+  { href: "/contact", label: "Contact", icon: HiOutlineEnvelope },
 ];
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [isDark, setIsDark] = useState(true);
 
   return (
     <div className="flex justify-center relative z-10 shadow-lg bg-background border border-[#9595951A] rounded-3xl p-1">
@@ -47,7 +50,7 @@ export default function Navigation() {
                     "bg-transparent border border-transparent hover:bg-[#9595951A] hover:border-[#9595951A]"
                 )}
               >
-                <Icon className="size-4" />
+                <Icon className="w-4 h-4" />
                 {item.label && <span>{item.label}</span>}
               </Link>
               {index === 0 && (
@@ -70,12 +73,17 @@ export default function Navigation() {
         ></div>
 
         <button
+          onClick={() => setIsDark(!isDark)}
           className={cn(
             "flex items-center gap-3 text-sm rounded-[1.25rem] px-2 py-1.5 cursor-pointer transition-all duration-200",
             "bg-transparent border border-transparent hover:bg-[#9595951A] hover:border-[#9595951A]"
           )}
         >
-          <SunIcon className="size-4" />
+          {isDark ? (
+            <HiOutlineSun className="w-4 h-4" />
+          ) : (
+            <HiOutlineMoon className="w-4 h-4" />
+          )}
         </button>
       </nav>
     </div>
