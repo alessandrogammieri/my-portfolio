@@ -47,7 +47,7 @@ export default function RootLayout({
             ></div>
           </div>
         </div>
-        <div className="min-h-4 min-w-0 w-full relative"></div>
+        <div className="min-h-4 min-w-0 w-full hidden md:block relative"></div>
         <div
           style={{
             backdropFilter: "blur(.5rem)",
@@ -56,7 +56,17 @@ export default function RootLayout({
             maskImage: "linear-gradient(180deg, #000000 20%, transparent 100%)",
             maskSize: "100% 100%",
           }}
-          className="min-w-0 w-full h-20 fixed top-0 z-20"
+          className="min-w-0 w-full h-20 hidden md:block fixed top-0 z-20"
+        ></div>
+        <div
+          style={{
+            backdropFilter: "blur(.5rem)",
+            background:
+              "linear-gradient(0deg, var(--color-background), transparent)",
+            maskImage: "linear-gradient(0deg, #000000 20%, transparent 100%)",
+            maskSize: "100% 100%",
+          }}
+          className="min-w-0 w-full h-20 block md:hidden fixed bottom-0 z-20"
         ></div>
         <Header />
         {children}

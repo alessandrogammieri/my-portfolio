@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaBehance } from "react-icons/fa6";
 import { HiEnvelope } from "react-icons/hi2";
 
 const socialItems = [
@@ -16,6 +16,12 @@ const socialItems = [
     external: true,
   },
   {
+    href: "https://behance.net/tuousername",
+    label: "Behance",
+    icon: FaBehance,
+    external: true,
+  },
+  {
     href: "mailto:alessandrogammieri.it@gmail.com",
     label: "Email",
     icon: HiEnvelope,
@@ -25,12 +31,12 @@ const socialItems = [
 
 export default function Footer() {
   return (
-    <footer className="min-w-0 w-full relative flex justify-center bg-transparent">
-      <div className="w-5xl flex justify-between items-center p-6">
+    <footer className="min-w-0 w-full relative flex flex-col md:flex-row justify-center bg-transparent">
+      <div className="min-w-0 w-full md:w-5xl flex flex-col md:flex-row justify-between items-center p-2 md:p-6 gap-4 md:gap-0">
         <div className="flex items-center gap-2 text-sm">
           <span className="text-gray-400">© {new Date().getFullYear()} /</span>
-          <span>My Portfolio</span>
-          <span className="text-gray-400">/ All rights reserved</span>
+          <span>agDeveloper</span>
+          <span className="text-gray-400">/ Tutti i diritti riservati</span>
         </div>
         <nav className="flex items-center gap-5 text-sm">
           {socialItems.map((item) => {
@@ -55,6 +61,7 @@ export default function Footer() {
           })}
         </nav>
       </div>
+      <div className="h-24 w-full block md:hidden"></div>
     </footer>
   );
 }

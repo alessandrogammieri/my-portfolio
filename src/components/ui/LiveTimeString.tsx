@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export default function LiveTime() {
+export default function LiveTimeString() {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -164,7 +164,7 @@ export default function LiveTime() {
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="hidden xl:flex xl:items-center xl:gap-2">
       <p className="text-sm">{formatTimeInItalian(time)}</p>
     </div>
   );

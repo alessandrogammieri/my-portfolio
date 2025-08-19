@@ -1,19 +1,19 @@
 export const metadata = {
   title: {
-    default: "About",
+    default: "Contatti",
   },
   description:
-    "Sono uno sviluppatore full stack specializzato nello sviluppo di applicazioni web moderne e performanti. Realizzo soluzioni digitali su misura per ogni esigenza.",
+    "Offro consulenza e sviluppo su misura per applicazioni web moderne. Prenota una call per discutere del tuo progetto e delle tecnologie più adatte.",
 };
 
-export default function About() {
+export default function Contact() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1 className="text-3xl font-bold">About Us</h1>
+        <h1 className="text-3xl font-bold">Contact Page</h1>
         <p className="text-lg">
-          Welcome to our application! We are dedicated to providing the best
-          user experience.
+          This is the Contact page of our application. Here you can find various
+          tasks and projects.
         </p>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">

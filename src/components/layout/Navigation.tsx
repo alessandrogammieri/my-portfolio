@@ -16,11 +16,31 @@ import {
 } from "react-icons/hi2";
 
 const navigationItems = [
-  { href: "/", label: "", icon: HiOutlineHome },
-  { href: "/about", label: "About", icon: HiOutlineUserCircle },
-  { href: "/works", label: "Works", icon: HiOutlineSquares2X2 },
-  { href: "/blog", label: "Blog", icon: HiOutlineBookOpen },
-  { href: "/contact", label: "Contact", icon: HiOutlineEnvelope },
+  {
+    href: "/",
+    label: "",
+    icon: HiOutlineHome,
+  },
+  {
+    href: "/profilo",
+    label: "Profilo",
+    icon: HiOutlineUserCircle,
+  },
+  {
+    href: "/progetti",
+    label: "Progetti",
+    icon: HiOutlineSquares2X2,
+  },
+  {
+    href: "/blog",
+    label: "Blog",
+    icon: HiOutlineBookOpen,
+  },
+  {
+    href: "/contatti",
+    label: "Contatti",
+    icon: HiOutlineEnvelope,
+  },
 ];
 
 export default function Navigation() {
@@ -51,7 +71,9 @@ export default function Navigation() {
                 )}
               >
                 <Icon className="w-4 h-4" />
-                {item.label && <span>{item.label}</span>}
+                {item.label && (
+                  <span className="hidden md:inline">{item.label}</span>
+                )}
               </Link>
               {index === 0 && (
                 <div

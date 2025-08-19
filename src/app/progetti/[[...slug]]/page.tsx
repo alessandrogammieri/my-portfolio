@@ -1,6 +1,6 @@
 export const metadata = {
   title: {
-    default: "Works",
+    default: "Progetti",
   },
   description:
     "In questa sezione condivido alcuni dei progetti a cui ho lavorato. Amo sviluppare applicazioni web su misura, combinando design intuitivo e tecnologie moderne come Node.js e React.",
