@@ -1,4 +1,5 @@
 import LiveTimeString from "../ui/LiveTimeString";
+import LiveTimeNumber from "../ui/LiveTimeNumber";
 import Navigation from "./Navigation";
 
 export default function Header() {
@@ -12,6 +13,7 @@ export default function Header() {
       </div>
       <div className="min-w-0 w-full hidden md:flex md:justify-end md:items-center">
         <LiveTimeString />
+        <LiveTimeNumber />
       </div>
     </header>
   );
