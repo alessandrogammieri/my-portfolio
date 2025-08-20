@@ -1,27 +1,36 @@
 @import "tailwindcss";
 @import "../styles/components.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --dot-color: #60e4fc;
-  --dot-bg: transparent;
-}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-[data-theme='dark'] {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --dot-color: #094074;
-  --dot-bg: transparent;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  /* Light theme */
+  --color-background-light: #ffffff;
+  --color-foreground-light: #0a0a0a;
+  --dot-color-light: #60e4fc;
+  /* Dark theme */
+  --color-background-dark: #0a0a0a;
+  --color-foreground-dark: #ffffff;
+  --dot-color-dark: #094074;
+  /* Global */
   --font-prompt: var(--font-prompt);
+}
+
+:root[data-theme="light"] {
+  background-color: var(--color-background-light);
+  color: var(--color-foreground-light);
+  --background: var(--color-background-light);
+  --dot-color: var(--dot-color-light);
+}
+
+:root[data-theme="dark"] {
+  background-color: var(--color-background-dark);
+  color: var(--color-foreground-dark);
+  --background: var(--color-background-dark);
+  --dot-color: var(--dot-color-dark);
 }
 
 body {
   font-family: var(--font-prompt), Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
