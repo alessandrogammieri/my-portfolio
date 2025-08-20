@@ -4,19 +4,19 @@ import { HiEnvelope } from "react-icons/hi2";
 
 const socialItems = [
   {
-    href: "https://github.com/tuousername",
+    href: "https://github.com/alessandrogammieri",
     label: "GitHub",
     icon: FaGithub,
     external: true,
   },
   {
-    href: "https://linkedin.com/in/tuousername",
+    href: "https://www.linkedin.com/in/alessandro-gammieri/",
     label: "LinkedIn",
     icon: FaLinkedin,
     external: true,
   },
   {
-    href: "https://behance.net/tuousername",
+    href: "https://www.behance.net/alessangammier",
     label: "Behance",
     icon: FaBehance,
     external: true,
