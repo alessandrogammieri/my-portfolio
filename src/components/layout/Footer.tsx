@@ -50,10 +50,10 @@ export default function Footer() {
                   rel={item.external ? "noopener noreferrer" : undefined}
                   className="flex items-center cursor-pointer transition-colors duration-200"
                 >
-                  <Icon className="w-5 h-5 text-gray-400 hover:text-white hover:scale-110 transition-all duration-200" />
+                  <Icon className="w-5 h-5 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-200" />
                 </Link>
 
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-background border border-[#9595951A] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-transparent dark:bg-background-dark border border-gray-400 dark:border-gray-600 text-foreground-light dark:text-foreground-dark text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
                   {item.label}
                 </div>
               </div>

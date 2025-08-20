@@ -28,15 +28,10 @@ export default function RootLayout({
   return (
     <html lang="it" suppressHydrationWarning>
       <body
-        className={`${prompt.variable} antialiased relative bg-background text-foreground`}
+        className={`${prompt.variable} antialiased relative`}
         cz-shortcut-listen="true"
       >
-        <ThemeProvider
-          attribute="data-theme"
-          enableSystem={true}
-          defaultTheme="system"
-          disableTransitionOnChange={false}
-        >
+        <ThemeProvider enableSystem={true} defaultTheme="system">
           <div className="min-h-0 min-w-0 h-full w-full fixed overflow-hidden">
             <div
               style={{
@@ -60,7 +55,7 @@ export default function RootLayout({
             style={{
               backdropFilter: "blur(.5rem)",
               background:
-                "linear-gradient(180deg, hsl(var(--background)), transparent)",
+                "linear-gradient(180deg, var(--background), transparent)",
               maskImage:
                 "linear-gradient(180deg, #000000 20%, transparent 100%)",
               maskSize: "100% 100%",
@@ -71,7 +66,7 @@ export default function RootLayout({
             style={{
               backdropFilter: "blur(.5rem)",
               background:
-                "linear-gradient(0deg, hsl(var(--background)), transparent)",
+                "linear-gradient(0deg, var(--background), transparent)",
               maskImage: "linear-gradient(0deg, #000000 20%, transparent 100%)",
               maskSize: "100% 100%",
             }}
