@@ -4,6 +4,15 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
+  --dot-color: #60e4fc;
+  --dot-bg: transparent;
+}
+
+[data-theme='dark'] {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --dot-color: #094074;
+  --dot-bg: transparent;
 }
 
 @theme inline {
@@ -12,13 +21,7 @@
   --font-prompt: var(--font-prompt);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ffffff;
-  }
-}
-
 body {
   font-family: var(--font-prompt), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

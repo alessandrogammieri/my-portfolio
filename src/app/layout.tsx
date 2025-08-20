@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -25,52 +26,61 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it">
+    <html lang="it" suppressHydrationWarning>
       <body
         className={`${prompt.variable} antialiased relative bg-background text-foreground`}
         cz-shortcut-listen="true"
       >
-        <div className="min-h-0 min-w-0 h-full w-full fixed overflow-hidden">
-          <div
-            style={{
-              maskImage:
-                "radial-gradient(100vh at 50% 0%, #000000 0, transparent 100%)",
-            }}
-            className="min-h-0 min-w-0 overflow-hidden h-full w-full absolute left-0 top-0"
-          >
+        <ThemeProvider
+          attribute="data-theme"
+          enableSystem={true}
+          defaultTheme="system"
+          disableTransitionOnChange={false}
+        >
+          <div className="min-h-0 min-w-0 h-full w-full fixed overflow-hidden">
             <div
               style={{
-                backgroundImage: "radial-gradient(#094074 1px, #000000 1px)",
-                backgroundSize: "0.125rem 0.125rem",
+                maskImage:
+                  "radial-gradient(100vh at 50% 0%, #000000 0, transparent 100%)",
               }}
-              className="min-h-0 min-w-0 h-full w-full absolute left-0 top-0 opacity-40 pointer-events-none"
-            ></div>
+              className="min-h-0 min-w-0 overflow-hidden h-full w-full absolute left-0 top-0"
+            >
+              <div
+                style={{
+                  backgroundImage:
+                    "radial-gradient(var(--dot-color) 1px, transparent 1px)",
+                  backgroundSize: "0.125rem 0.125rem",
+                }}
+                className="min-h-0 min-w-0 h-full w-full absolute left-0 top-0 opacity-40 pointer-events-none"
+              ></div>
+            </div>
           </div>
-        </div>
-        <div className="min-h-4 min-w-0 w-full hidden md:block relative"></div>
-        <div
-          style={{
-            backdropFilter: "blur(.5rem)",
-            background:
-              "linear-gradient(180deg, var(--color-background), transparent)",
-            maskImage: "linear-gradient(180deg, #000000 20%, transparent 100%)",
-            maskSize: "100% 100%",
-          }}
-          className="min-w-0 w-full h-20 hidden md:block fixed top-0 z-20"
-        ></div>
-        <div
-          style={{
-            backdropFilter: "blur(.5rem)",
-            background:
-              "linear-gradient(0deg, var(--color-background), transparent)",
-            maskImage: "linear-gradient(0deg, #000000 20%, transparent 100%)",
-            maskSize: "100% 100%",
-          }}
-          className="min-w-0 w-full h-20 block md:hidden fixed bottom-0 z-20"
-        ></div>
-        <Header />
-        {children}
-        <Footer />
+          <div className="min-h-4 min-w-0 w-full hidden md:block relative"></div>
+          <div
+            style={{
+              backdropFilter: "blur(.5rem)",
+              background:
+                "linear-gradient(180deg, hsl(var(--background)), transparent)",
+              maskImage:
+                "linear-gradient(180deg, #000000 20%, transparent 100%)",
+              maskSize: "100% 100%",
+            }}
+            className="min-w-0 w-full h-20 hidden md:block fixed top-0 z-20"
+          ></div>
+          <div
+            style={{
+              backdropFilter: "blur(.5rem)",
+              background:
+                "linear-gradient(0deg, hsl(var(--background)), transparent)",
+              maskImage: "linear-gradient(0deg, #000000 20%, transparent 100%)",
+              maskSize: "100% 100%",
+            }}
+            className="min-w-0 w-full h-20 block md:hidden fixed bottom-0 z-20"
+          ></div>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

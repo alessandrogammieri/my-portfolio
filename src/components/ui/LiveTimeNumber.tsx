@@ -3,9 +3,13 @@
 import { useState, useEffect } from "react";
 
 export default function LiveTimeNumber() {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState<Date | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    setTime(new Date());
+
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
@@ -24,6 +28,14 @@ export default function LiveTimeNumber() {
 
     return `${hours}:${minutes}:${seconds}`;
   };
+
+  if (!mounted || !time) {
+    return (
+      <div className="hidden md:flex md:items-center md:gap-2 xl:hidden">
+        <p className="text-sm tabular-nums">--:--:--</p>
+      </div>
+    );
+  }
 
   return (
     <div className="hidden md:flex md:items-center md:gap-2 xl:hidden">
