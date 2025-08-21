@@ -34,9 +34,13 @@ export default function Footer() {
     <footer className="min-w-0 w-full relative flex flex-col md:flex-row justify-center bg-transparent">
       <div className="min-w-0 w-full md:w-5xl flex flex-col md:flex-row justify-between items-center p-2 md:p-6 gap-4 md:gap-0">
         <div className="flex items-center gap-2 text-sm">
-          <span className="text-gray-400">© {new Date().getFullYear()} /</span>
+          <span className="text-gray-600 dark:text-gray-400">
+            © {new Date().getFullYear()} /
+          </span>
           <span>agDeveloper</span>
-          <span className="text-gray-400">/ Tutti i diritti riservati</span>
+          <span className="text-gray-600 dark:text-gray-400">
+            / Tutti i diritti riservati
+          </span>
         </div>
         <nav className="flex items-center gap-5 text-sm">
           {socialItems.map((item) => {
