@@ -3,9 +3,13 @@
 import { useState, useEffect } from "react";
 
 export default function LiveTimeString() {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState<Date | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    setTime(new Date());
+
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
@@ -17,6 +21,7 @@ export default function LiveTimeString() {
     const romeTime = new Date(
       date.toLocaleString("en-US", { timeZone: "Europe/Rome" })
     );
+
     const hours = romeTime.getHours();
     const minutes = romeTime.getMinutes();
 
@@ -110,15 +115,10 @@ export default function LiveTimeString() {
       "cinquantanove",
     ];
 
-    // Gestione casi speciali per mezzanotte e mezzogiorno
-    if (hours === 0 && minutes === 0) {
-      return "È mezzanotte";
-    }
-    if (hours === 12 && minutes === 0) {
-      return "È mezzogiorno";
-    }
+    // Gestione casi speciali
+    if (hours === 0 && minutes === 0) return "È mezzanotte";
+    if (hours === 12 && minutes === 0) return "È mezzogiorno";
 
-    // Gestione ore con minuti per mezzanotte e mezzogiorno
     if (hours === 0) {
       if (minutes === 15) return "È mezzanotte e un quarto";
       if (minutes === 30) return "È mezzanotte e mezza";
@@ -133,7 +133,6 @@ export default function LiveTimeString() {
       return `È mezzogiorno e ${minuteNames[minutes]}`;
     }
 
-    // Gestione ora normale
     const hourText = hourNames[hours];
     const isOne = hours === 1 || hours === 13;
 
@@ -141,27 +140,36 @@ export default function LiveTimeString() {
       return isOne ? `È l'${hourText}` : `Sono le ${hourText}`;
     }
 
-    // Gestione quarti d'ora
     if (minutes === 15) {
       return isOne
         ? `È l'${hourText} e un quarto`
         : `Sono le ${hourText} e un quarto`;
     }
+
     if (minutes === 30) {
       return isOne ? `È l'${hourText} e mezza` : `Sono le ${hourText} e mezza`;
     }
+
     if (minutes === 45) {
       return isOne
         ? `È l'${hourText} e tre quarti`
         : `Sono le ${hourText} e tre quarti`;
     }
 
-    // Minuti normali
     const minuteText = minuteNames[minutes];
     return isOne
       ? `È l'${hourText} e ${minuteText}`
       : `Sono le ${hourText} e ${minuteText}`;
   };
+
+  // Mostra placeholder durante SSR e prima del mount
+  if (!mounted || !time) {
+    return (
+      <div className="hidden xl:flex xl:items-center xl:gap-2">
+        <p className="text-sm">Caricamento orario...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="hidden xl:flex xl:items-center xl:gap-2">
