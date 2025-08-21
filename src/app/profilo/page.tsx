@@ -8,13 +8,39 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1 className="text-3xl font-bold">About Us</h1>
-        <p className="text-lg">
-          Welcome to our application! We are dedicated to providing the best
-          user experience.
-        </p>
+    <div
+      id="about"
+      className="min-h-[calc(100vh-10.5rem)] md:min-h-[calc(100vh-9rem)] min-w-0 w-full flex justify-center relative p-3 md:p-10"
+    >
+      <main className="min-h-0 min-w-0 w-full flex justify-center relative">
+        <div className="max-w-5xl w-full flex flex-col relative">
+          <div className="min-w-0 w-full flex flex-col md:flex-row justify-center relative">
+            <div
+              id="profile-picture"
+              className="min-w-[10rem] h-fit flex flex-col items-center grow-3 shrink md:sticky md:top-16 px-10 pb-20"
+            >
+              <div
+                style={{
+                  width: "160px",
+                  height: "160px",
+                  backgroundColor: "red",
+                }}
+              ></div>
+            </div>
+            <div
+              id="profile-description"
+              className="max-w-[40rem] w-full flex self-center md:self-auto grow-9 shrink relative"
+            >
+              <div
+                style={{
+                  width: "100%",
+                  height: "1600px",
+                  backgroundColor: "green",
+                }}
+              ></div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
