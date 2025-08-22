@@ -1,3 +1,12 @@
+import { ComponentType } from 'react';
+
+export interface NavItem {
+  href: string;
+  label: string;
+  icon: ComponentType<{ className?: string }>;
+  external?: boolean;
+}
+
 export interface Project {
   id: string;
   title: string;

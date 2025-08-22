@@ -1,33 +1,5 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaBehance } from "react-icons/fa6";
-import { HiEnvelope } from "react-icons/hi2";
-
-const socialItems = [
-  {
-    href: "https://github.com/alessandrogammieri",
-    label: "GitHub",
-    icon: FaGithub,
-    external: true,
-  },
-  {
-    href: "https://www.linkedin.com/in/alessandro-gammieri/",
-    label: "LinkedIn",
-    icon: FaLinkedin,
-    external: true,
-  },
-  {
-    href: "https://www.behance.net/alessangammier",
-    label: "Behance",
-    icon: FaBehance,
-    external: true,
-  },
-  {
-    href: "mailto:alessandrogammieri.it@gmail.com",
-    label: "Email",
-    icon: HiEnvelope,
-    external: false,
-  },
-];
+import { social } from "@/data/social";
 
 export default function Footer() {
   return (
@@ -43,7 +15,7 @@ export default function Footer() {
           </span>
         </div>
         <nav className="flex items-center gap-5 text-sm">
-          {socialItems.map((item) => {
+          {social.map((item) => {
             const Icon = item.icon;
 
             return (
