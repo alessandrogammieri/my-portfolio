@@ -35,33 +35,34 @@ const Button = forwardRef<
   ) => {
     const baseStyles = cn(
       "group min-h-10 h-10 w-fit flex justify-center items-center gap-3",
-      "bg-cyan-500/10 hover:bg-cyan-400/15 border border-cyan-500 rounded-full",
+      "bg-gray-500/10 hover:bg-gray-400/15 dark:bg-cyan-500/10 dark:hover:bg-cyan-400/15 border border-cyan-500 rounded-full",
       "px-4 transition-all duration-[400ms] ease-out relative",
+      "hover:shadow-md hover:shadow-gray-400/20 dark:hover:shadow-cyan-500/20",
       chevron && "hover:pr-12 overflow-hidden",
       className
     );
 
     const content = (
       <>
-        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-[1.5s] ease-in-out"></span>
+        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/10 dark:via-white/10 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-[1.5s] ease-in-out"></span>
 
         {Icon && (
-          <span className="h-fit w-fit inline-flex relative transition-all duration-300 ease-out">
-            <Icon className="w-5 h-5 text-cyan-500" />
+          <span className="h-fit w-fit inline-flex relative transition-all duration-300 ease-out group-hover:text-gray-700 dark:group-hover:text-cyan-400">
+            <Icon className="w-5 h-5 text-gray-600 dark:text-cyan-500 transition-colors duration-300" />
           </span>
         )}
 
-        <div className="relative text-md transition-all duration-300 ease-out">
+        <div className="relative text-md transition-all duration-300 ease-out group-hover:text-gray-700 dark:group-hover:text-cyan-50">
           <span>{children}</span>
         </div>
 
         {chevron && (
           <span
-            className="absolute right-3 h-fit w-fit inline-flex bg-cyan-500/10 border border-gray-400/15 rounded-full p-1
+            className="absolute right-3 h-fit w-fit inline-flex bg-gray-500/10 dark:bg-cyan-500/10 border border-gray-400/30 dark:border-gray-400/15 rounded-full p-1
              opacity-0 scale-[0.97] translate-x-[-5px] group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0
              transition-all duration-[450ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]"
           >
-            <HiChevronRight className="w-5 h-5 text-white" />
+            <HiChevronRight className="w-5 h-5 text-gray-600 dark:text-white" />
           </span>
         )}
       </>
