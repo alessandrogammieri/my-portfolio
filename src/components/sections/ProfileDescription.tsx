@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { social } from "@/data/social";
 import Button from "../ui/Button";
-import { HiOutlineCalendar } from "react-icons/hi2";
+import { HiCalendarDays } from "react-icons/hi2";
 
 export default function ProfileDescription() {
   return (
@@ -12,9 +12,10 @@ export default function ProfileDescription() {
       >
         <div className="mb-6 flex gap-3 flex-wrap justify-center md:justify-start">
           <Button
-            variant="outline"
-            icon={HiOutlineCalendar}
-            iconPosition="left"
+            href="https://calendly.com/"
+            icon={HiCalendarDays}
+            chevron
+            external={true}
           >
             Fissiamo una call
           </Button>

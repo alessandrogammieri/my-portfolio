@@ -4,123 +4,90 @@ import {
   ReactNode,
   ComponentType,
 } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { HiChevronRight } from "react-icons/hi2";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?:
-    | "primary"
-    | "secondary"
-    | "outline"
-    | "ghost"
-    | "success"
-    | "warning"
-    | "danger";
-  size?: "sm" | "md" | "lg";
+type ButtonProps = {
   icon?: ComponentType<{ className?: string }>;
-  iconPosition?: "left" | "right";
-  avatar?: string; // URL per immagine avatar
   children?: ReactNode;
-}
+  href?: string;
+  external?: boolean;
+  className?: string;
+  chevron?: boolean;
+};
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
+>(
   (
     {
       className,
-      variant = "primary",
-      size = "md",
       icon: Icon,
-      iconPosition = "left",
-      avatar,
       children,
+      href,
+      external,
+      chevron = false,
       ...props
     },
     ref
   ) => {
+    const baseStyles = cn(
+      "group min-h-10 h-10 w-fit flex justify-center items-center gap-3",
+      "bg-cyan-500/10 hover:bg-cyan-400/15 border border-cyan-500 rounded-full",
+      "px-4 transition-all duration-[400ms] ease-out relative",
+      chevron && "hover:pr-12 overflow-hidden",
+      className
+    );
+
+    const content = (
+      <>
+        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-[1.5s] ease-in-out"></span>
+
+        {Icon && (
+          <span className="h-fit w-fit inline-flex relative transition-all duration-300 ease-out">
+            <Icon className="w-5 h-5 text-cyan-500" />
+          </span>
+        )}
+
+        <div className="relative text-md transition-all duration-300 ease-out">
+          <span>{children}</span>
+        </div>
+
+        {chevron && (
+          <span
+            className="absolute right-3 h-fit w-fit inline-flex bg-cyan-500/10 border border-gray-400/15 rounded-full p-1
+             opacity-0 scale-[0.97] translate-x-[-5px] group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0
+             transition-all duration-[450ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+          >
+            <HiChevronRight className="w-5 h-5 text-white" />
+          </span>
+        )}
+      </>
+    );
+
+    if (href) {
+      return (
+        <Link
+          href={href}
+          className={baseStyles}
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+        >
+          {content}
+        </Link>
+      );
+    }
+
     return (
       <button
-        className={cn(
-          // Base styles - simili all'immagine
-          "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:pointer-events-none",
-
-          // Variant styles basati sull'immagine
-          {
-            // Primary - blu scuro come nell'immagine "About - Selene Yu"
-            "bg-[#1a2332] text-white hover:bg-[#2a3442] border border-[#2a3442] shadow-sm":
-              variant === "primary",
-
-            // Secondary - grigio neutro
-            "bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-200 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 dark:border-gray-700":
-              variant === "secondary",
-
-            // Outline - bordo con sfondo trasparente
-            "bg-transparent border border-foreground/20 text-foreground hover:bg-foreground/5 hover:border-foreground/30":
-              variant === "outline",
-
-            // Ghost - solo testo con hover
-            "bg-transparent text-foreground hover:bg-foreground/5":
-              variant === "ghost",
-
-            // Success - verde
-            "bg-green-600 text-white hover:bg-green-700 border border-green-700 shadow-sm":
-              variant === "success",
-
-            // Warning - arancione
-            "bg-orange-600 text-white hover:bg-orange-700 border border-orange-700 shadow-sm":
-              variant === "warning",
-
-            // Danger - rosso
-            "bg-red-600 text-white hover:bg-red-700 border border-red-700 shadow-sm":
-              variant === "danger",
-          },
-
-          // Size styles
-          {
-            "h-8 px-3 text-sm": size === "sm",
-            "h-10 px-4 text-sm": size === "md",
-            "h-12 px-6 text-base": size === "lg",
-          },
-          className
-        )}
-        ref={ref}
+        className={baseStyles}
+        ref={ref as React.Ref<HTMLButtonElement>}
         {...props}
       >
-        {/* Avatar a sinistra */}
-        {avatar && (
-          <div className="flex-shrink-0">
-            <img
-              src={avatar}
-              alt=""
-              className={cn("rounded-full object-cover", {
-                "w-5 h-5": size === "sm",
-                "w-6 h-6": size === "md",
-                "w-8 h-8": size === "lg",
-              })}
-            />
-          </div>
-        )}
-
-        {/* Icona a sinistra */}
-        {Icon && iconPosition === "left" && !avatar && (
-          <Icon
-            className={cn({
-              "w-4 h-4": size === "sm" || size === "md",
-              "w-5 h-5": size === "lg",
-            })}
-          />
-        )}
-
-        {/* Contenuto del pulsante */}
-        {children && <span className="flex-1 text-center">{children}</span>}
-
-        {/* Icona a destra */}
-        {Icon && iconPosition === "right" && !avatar && (
-          <Icon
-            className={cn({
-              "w-4 h-4": size === "sm" || size === "md",
-              "w-5 h-5": size === "lg",
-            })}
-          />
-        )}
+        {content}
       </button>
     );
   }
