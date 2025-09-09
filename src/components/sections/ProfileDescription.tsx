@@ -2,6 +2,7 @@ import Link from "next/link";
 import { social } from "@/data/social";
 import Button from "../ui/Button";
 import { HiCalendarDays } from "react-icons/hi2";
+import WorkExperience from "./WorkExperience";
 
 export default function ProfileDescription() {
   return (
@@ -55,6 +56,7 @@ export default function ProfileDescription() {
         Her work spans digital interfaces, interactive experiences, and the
         convergence of design and technology.
       </div>
+      <WorkExperience />
     </div>
   );
 }
