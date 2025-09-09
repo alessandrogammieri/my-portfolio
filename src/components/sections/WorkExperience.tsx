@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function WorkExperience() {
   return (
     <div className="min-w-0 w-full relative">
-      <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold text-balance mb-6">
-        Work Experience
+      <h2 className="text-3xl md:text-4xl font-semibold text-balance mb-6">
+        Esperienze
       </h2>
       <div className="min-w-0 w-full flex flex-col gap-10 relative mb-10">
         <div className="min-w-0 w-full flex flex-col relative">
@@ -62,6 +62,28 @@ export default function WorkExperience() {
             </li>
           </ul>
           <div className="min-w-0 w-full flex flex-wrap gap-3 relative pt-6 ps-10">
+            <div className="min-w-64 h-36 flex relative rounded-lg border border-foreground-light/60 dark:border-foreground-dark/60">
+              <div className="min-w-0 w-full flex flex-col relative overflow-hidden cursor-pointer rounded-lg isolate outline-0">
+                <Image
+                  src="/images/avatar.jpeg"
+                  width={255}
+                  height={143}
+                  alt="Alessandro Gammieri"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="min-w-64 h-36 flex relative rounded-lg border border-foreground-light/60 dark:border-foreground-dark/60">
+              <div className="min-w-0 w-full flex flex-col relative overflow-hidden cursor-pointer rounded-lg isolate outline-0">
+                <Image
+                  src="/images/avatar.jpeg"
+                  width={255}
+                  height={143}
+                  alt="Alessandro Gammieri"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
             <div className="min-w-64 h-36 flex relative rounded-lg border border-foreground-light/60 dark:border-foreground-dark/60">
               <div className="min-w-0 w-full flex flex-col relative overflow-hidden cursor-pointer rounded-lg isolate outline-0">
                 <Image

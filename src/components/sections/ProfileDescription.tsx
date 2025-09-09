@@ -3,6 +3,7 @@ import { social } from "@/data/social";
 import Button from "../ui/Button";
 import { HiCalendarDays } from "react-icons/hi2";
 import WorkExperience from "./WorkExperience";
+import Study from "./Study";
 
 export default function ProfileDescription() {
   return (
@@ -57,6 +58,7 @@ export default function ProfileDescription() {
         convergence of design and technology.
       </div>
       <WorkExperience />
+      <Study />
     </div>
   );
 }
