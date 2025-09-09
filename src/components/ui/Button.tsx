@@ -35,7 +35,7 @@ const Button = forwardRef<
   ) => {
     const baseStyles = cn(
       "group min-h-10 h-10 w-fit flex justify-center items-center gap-3",
-      "bg-gray-500/10 hover:bg-gray-400/15 dark:bg-cyan-500/10 dark:hover:bg-cyan-400/15 border border-cyan-500 rounded-full",
+      "bg-gray-500/10 hover:bg-gray-400/15 dark:bg-cyan-500/10 dark:hover:bg-cyan-400/15 border border-cyan-600 dark:border-cyan-500 rounded-full",
       "px-4 transition-all duration-[400ms] ease-out relative",
       "hover:shadow-md hover:shadow-gray-400/20 dark:hover:shadow-cyan-500/20",
       chevron && "pr-12 md:pr-4 md:hover:pr-12 overflow-hidden",
@@ -48,7 +48,7 @@ const Button = forwardRef<
 
         {Icon && (
           <span className="h-fit w-fit inline-flex relative transition-all duration-300 ease-out dark:group-hover:text-cyan-400">
-            <Icon className="w-5 h-5 text-gray-600 dark:text-cyan-500 transition-colors duration-300" />
+            <Icon className="w-5 h-5 text-cyan-600 dark:text-cyan-500 transition-colors duration-300" />
           </span>
         )}
 

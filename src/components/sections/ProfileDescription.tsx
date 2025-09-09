@@ -50,7 +50,7 @@ export default function ProfileDescription() {
           })}
         </div>
       </div>
-      <div className="min-w-0 w-full flex relative flex-col mb-20">
+      <div className="min-w-0 w-full flex relative flex-col mb-20 text-lg">
         Selene is a Jakarta-based design engineer with a passion for
         transforming complex challenges into simple, elegant design solutions.
         Her work spans digital interfaces, interactive experiences, and the
