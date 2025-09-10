@@ -4,13 +4,14 @@ import Button from "../ui/Button";
 import { HiCalendarDays } from "react-icons/hi2";
 import WorkExperience from "./WorkExperience";
 import Study from "./Study";
+import TechnicalSkills from "./TechnicalSkills";
 
 export default function ProfileDescription() {
   return (
     <div className="max-w-[40rem] w-full flex flex-col self-center md:self-auto flex-9 relative">
       <div
         id="introduction"
-        className="min-h-[10rem] min-w-0 w-full flex flex-col justify-center items-center md:items-start relative mb-8"
+        className="min-h-[10rem] min-w-0 w-full flex flex-col justify-center items-center md:items-start relative mb-8 md:scroll-mt-20"
       >
         <div className="mb-6 flex gap-3 flex-wrap justify-center md:justify-start">
           <Button
@@ -57,8 +58,15 @@ export default function ProfileDescription() {
         Her work spans digital interfaces, interactive experiences, and the
         convergence of design and technology.
       </div>
-      <WorkExperience />
-      <Study />
+      <div id="work-experience" className="md:scroll-mt-20">
+        <WorkExperience />
+      </div>
+      <div id="study" className="md:scroll-mt-20">
+        <Study />
+      </div>
+      <div id="technical-skills" className="md:scroll-mt-20">
+        <TechnicalSkills />
+      </div>
     </div>
   );
 }
