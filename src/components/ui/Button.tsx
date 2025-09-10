@@ -38,7 +38,7 @@ const Button = forwardRef<
       "bg-gray-500/10 hover:bg-gray-400/15 dark:bg-cyan-500/10 dark:hover:bg-cyan-400/15 border border-cyan-600 dark:border-cyan-500 rounded-full",
       "px-4 transition-all duration-[400ms] ease-out relative",
       "hover:shadow-md hover:shadow-gray-400/20 dark:hover:shadow-cyan-500/20",
-      chevron && "pr-12 md:pr-4 md:hover:pr-12 overflow-hidden",
+      chevron && "pr-12 lg:pr-4 lg:hover:pr-12 overflow-hidden",
       className
     );
 
@@ -59,8 +59,8 @@ const Button = forwardRef<
         {chevron && (
           <span
             className="absolute right-3 h-fit w-fit inline-flex bg-gray-500/10 dark:bg-cyan-500/10 border border-gray-400/30 dark:border-gray-400/15 rounded-full p-1
-             md:opacity-0 md:scale-[0.97] md:translate-x-[-5px] opacity-100 scale-100 translate-x-0
-             md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:translate-x-0
+             lg:opacity-0 lg:scale-[0.97] lg:translate-x-[-5px] opacity-100 scale-100 translate-x-0
+             lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:translate-x-0
              transition-all duration-[450ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]"
           >
             <HiChevronRight className="w-5 h-5 text-gray-600 dark:text-white" />

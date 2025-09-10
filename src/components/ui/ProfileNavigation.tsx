@@ -25,7 +25,7 @@ export default function ProfileNavigation() {
   };
 
   return (
-    <div className="hidden md:flex flex-col gap-8 fixed left-0 top-1/2 -translate-y-1/2 ps-6">
+    <div className="hidden md:flex flex-col gap-8 fixed left-0 top-1/2 -translate-y-1/2 ps-6 z-10">
       <div className="flex flex-col gap-6 fixed left-0 top-1/2 -translate-y-1/2 ps-6 whitespace-nowrap">
         {navigationItems.map((item) => (
           <div key={item.id} className="flex relative gap-3 flex-col">
