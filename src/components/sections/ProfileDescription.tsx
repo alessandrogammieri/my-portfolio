@@ -53,10 +53,11 @@ export default function ProfileDescription() {
         </div>
       </div>
       <div className="min-w-0 w-full flex relative flex-col mb-20 text-lg">
-        Selene is a Jakarta-based design engineer with a passion for
-        transforming complex challenges into simple, elegant design solutions.
-        Her work spans digital interfaces, interactive experiences, and the
-        convergence of design and technology.
+        Sono un Full Stack Developer con una solida esperienza nello sviluppo di
+        soluzioni web complete, performanti e intuitive. Unisco competenze
+        tecniche e attenzione al design per realizzare applicazioni affidabili e
+        ben strutturate, mantenendo un approccio orientato al miglioramento
+        continuo e all'evoluzione tecnologica.
       </div>
       <div id="work-experience" className="md:scroll-mt-20">
         <WorkExperience />
