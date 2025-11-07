@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { educationList } from "@/data/education";
+
 export default function Study() {
   return (
     <div className="min-w-0 w-full relative">
@@ -5,22 +8,31 @@ export default function Study() {
         Formazione
       </h2>
       <div className="min-w-0 w-full flex flex-col gap-10 relative mb-10">
-        <div className="min-w-0 w-full flex flex-col relative gap-2">
-          <span className="text-xl font-semibold" id="University of Jakarta">
-            University of Jakarta
-          </span>
-          <span className="text-gray-600 dark:text-gray-400">
-            Studied software engineering.
-          </span>
-        </div>
-        <div className="min-w-0 w-full flex flex-col relative gap-2">
-          <span className="text-xl font-semibold" id="University of Jakarta">
-            University of Jakarta
-          </span>
-          <span className="text-gray-600 dark:text-gray-400">
-            Studied software engineering.
-          </span>
-        </div>
+        {educationList.map((education) => (
+          <div
+            key={education.id}
+            className="min-w-0 w-full flex flex-col relative gap-2"
+          >
+            {education.institutionUrl ? (
+              <Link
+                href={education.institutionUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={education.institution}
+                className="text-xl font-semibold"
+              >
+                {education.institution}
+              </Link>
+            ) : (
+              <span className="text-xl font-semibold">
+                {education.institution}
+              </span>
+            )}
+            <span className="text-gray-600 dark:text-gray-400">
+              {education.description}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
