@@ -14,7 +14,7 @@ export default function WorkExperience() {
             key={experience.id}
             className="min-w-0 w-full flex flex-col relative"
           >
-            <div className="min-w-0 w-full flex justify-between items-end relative mb-1">
+            <div className="min-w-0 w-full flex flex-col sm:flex-row justify-between items-start sm:items-end relative mb-1">
               {experience.companyUrl ? (
                 <Link
                   href={experience.companyUrl}
