@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import ProjectsSlider from "@/components/sections/ProjectsSlider";
+import ContactForm from "@/components/sections/ContactForm";
 import Video from "@/components/ui/Video";
 import { HiArrowRight } from "react-icons/hi2";
 
@@ -263,6 +264,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <ContactForm
+              title="Get in Touch"
+              description="Send me a message and I'll get back to you as soon as possible"
+              actionUrl="/api/contact"
+            />
           </div>
         </div>
       </main>

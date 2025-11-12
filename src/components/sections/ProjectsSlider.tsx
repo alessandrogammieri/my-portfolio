@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
-import { Project, projects as allProjects } from "@/data/projects";
+import { Project } from "@/lib/types";
+import { projects as allProjects } from "@/data/projects";
 
 interface ProjectsSliderProps {
   projects?: Project[];
