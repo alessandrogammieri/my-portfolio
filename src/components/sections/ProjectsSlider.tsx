@@ -89,7 +89,7 @@ export default function ProjectsSlider() {
             </div>
 
             {/* Dots Navigation */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-2 mt-4">
               {projects.map((_, index) => (
                 <button
                   key={index}
@@ -97,8 +97,8 @@ export default function ProjectsSlider() {
                   onClick={(e) => goToSlide(e, index)}
                   className={`transition-all duration-300 rounded-full cursor-pointer ${
                     index === currentIndex
-                      ? "w-8 h-2 bg-cyan-500"
-                      : "w-2 h-2 bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 dark:hover:bg-gray-500"
+                      ? "w-[25%] h-0.5 bg-cyan-500"
+                      : "w-[25%] h-0.5 bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 dark:hover:bg-gray-500"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

@@ -1,5 +1,8 @@
+import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import ProjectsSlider from "@/components/sections/ProjectsSlider";
+import { HiArrowRight } from "react-icons/hi2";
 
 export default function Home() {
   return (
@@ -54,15 +57,134 @@ export default function Home() {
                       </h2>
                     </div>
                     <div className="flex flex-col gap-4 grow-7 relative">
-                      <div className="flex items-center relative"></div>
+                      <div className="flex items-center relative">
+                        <div className="flex items-center -space-x-2">
+                          <Image
+                            src="/images/avatar.jpeg"
+                            alt="Avatar 1"
+                            width={28}
+                            height={28}
+                            className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-30"
+                          />
+                          <Image
+                            src="/images/avatar.jpeg"
+                            alt="Avatar 2"
+                            width={28}
+                            height={28}
+                            className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-20"
+                          />
+                          <Image
+                            src="/images/avatar.jpeg"
+                            alt="Avatar 3"
+                            width={28}
+                            height={28}
+                            className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-10"
+                          />
+                        </div>
+                      </div>
                       <span className="text-sm md:text-base font-light text-gray-600 dark:text-gray-400">
                         Development of a flexible and highly customizable design
                         system using Next.js for front-end and Figma for design
                         collaboration.
                       </span>
+                      <div className="flex relative">
+                        <Link
+                          href="/progetti"
+                          title="Read case study"
+                          className="group flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-500 mb-6 hover:gap-3 active:gap-3 transition-all duration-300"
+                        >
+                          <span>Read case study</span>
+                          <HiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-active:translate-x-0.5" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className="min-w-0 w-full flex flex-col relative mb-4 md:mb-6 lg:mb-10">
+              <div className="min-w-0 w-full flex relative pr-16">
+                <div className="max-w-3xl w-full h-0.5 bg-gray-400 dark:bg-gray-600"></div>
+              </div>
+              <div className="min-w-0 w-full flex flex-col md:flex-row gap-6 relative mt-10">
+                <div className="flex relative grow-1 pl-4 md:pl-6 lg:pl-10 pt-6">
+                  <h2 className="text-2xl lg:text-3xl font-semibold">
+                    Latest from the blog
+                  </h2>
+                </div>
+                <div className="flex grow-3 relative px-5">
+                  <div className="w-full relative grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                    <Link
+                      href="/blog"
+                      title="Read case study"
+                      className="min-w-0 w-full flex p-0 border-none outline-0 bg-none"
+                    >
+                      <div className="min-w-0 w-full flex flex-col relative p-1 border border-transparent rounded-3xl hover:bg-gray-500/15 focus-within:bg-gray-500/15 active:bg-gray-500/15 transition-colors duration-300">
+                        <div className="min-w-0 w-full flex relative">
+                          <div className="w-full flex flex-col justify-center gap-5 relative px-4 md:px-6 lg:px-10 py-6">
+                            <div className="flex items-center gap-6 relative">
+                              <Image
+                                src="/images/avatar.jpeg"
+                                alt="Avatar 1"
+                                width={28}
+                                height={28}
+                                className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-30"
+                              />
+                              <div className="flex items-center gap-4 relative">
+                                <span className="text-xs">agDeveloper</span>
+                              </div>
+                              <span className="text-xs text-gray-600 dark:text-gray-400">
+                                23 Aprile 2025
+                              </span>
+                            </div>
+                            <span className="text-lg md:text-xl lg:text-2xl font-semibold">
+                              Quick start with Magic Portfolio
+                            </span>
+                            <span className="text-xs md:text-sm font-light text-gray-600 dark:text-gray-400">
+                              Magic Portfolio
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/blog"
+                      title="Read case study"
+                      className="min-w-0 w-full flex p-0 border-none outline-0 bg-none"
+                    >
+                      <div className="min-w-0 w-full flex flex-col relative p-1 border border-transparent rounded-3xl hover:bg-gray-500/15 focus-within:bg-gray-500/15 active:bg-gray-500/15 transition-colors duration-300">
+                        <div className="min-w-0 w-full flex relative">
+                          <div className="w-full flex flex-col justify-center gap-5 relative px-4 md:px-6 lg:px-10 py-6">
+                            <div className="flex items-center gap-6 relative">
+                              <Image
+                                src="/images/avatar.jpeg"
+                                alt="Avatar 1"
+                                width={28}
+                                height={28}
+                                className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-30"
+                              />
+                              <div className="flex items-center gap-4 relative">
+                                <span className="text-xs">agDeveloper</span>
+                              </div>
+                              <span className="text-xs text-gray-600 dark:text-gray-400">
+                                23 Aprile 2025
+                              </span>
+                            </div>
+                            <span className="text-lg md:text-xl lg:text-2xl font-semibold">
+                              Quick start with Magic Portfolio
+                            </span>
+                            <span className="text-xs md:text-sm font-light text-gray-600 dark:text-gray-400">
+                              Magic Portfolio
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="min-w-0 w-full flex justify-end relative pl-16">
+                <div className="max-w-3xl w-full h-0.5 bg-gray-400 dark:bg-gray-600"></div>
               </div>
             </div>
           </div>
