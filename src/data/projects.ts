@@ -1,10 +1,4 @@
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  slug?: string;
-}
+import { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
@@ -13,6 +7,10 @@ export const projects: Project[] = [
     description: "Descrizione del progetto 1",
     image: "/images/projects/image.jpeg",
     slug: "progetto-1",
+    technologies: [],
+    category: "web",
+    featured: false,
+    year: 2025,
   },
   {
     id: "2",
@@ -20,6 +18,10 @@ export const projects: Project[] = [
     description: "Descrizione del progetto 2",
     image: "/images/projects/image2.jpeg",
     slug: "progetto-2",
+    technologies: [],
+    category: "web",
+    featured: false,
+    year: 2025,
   },
   {
     id: "3",
@@ -27,6 +29,10 @@ export const projects: Project[] = [
     description: "Descrizione del progetto 3",
     image: "/images/projects/image.jpeg",
     slug: "progetto-3",
+    technologies: [],
+    category: "web",
+    featured: false,
+    year: 2025,
   },
   {
     id: "4",
@@ -34,5 +40,9 @@ export const projects: Project[] = [
     description: "Descrizione del progetto 4",
     image: "/images/projects/image2.jpeg",
     slug: "progetto-4",
+    technologies: [],
+    category: "web",
+    featured: false,
+    year: 2025,
   },
 ];

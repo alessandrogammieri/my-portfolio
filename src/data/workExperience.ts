@@ -1,22 +1,4 @@
-export interface WorkExperience {
-  id: string;
-  company: string;
-  companyUrl?: string;
-  role: string;
-  period: string;
-  description?: string;
-  consultingFor?: {
-    name: string;
-    url: string;
-  };
-  achievements: string[];
-  images?: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  }[];
-}
+import { WorkExperience } from "@/lib/types";
 
 export const workExperiences: WorkExperience[] = [
   {

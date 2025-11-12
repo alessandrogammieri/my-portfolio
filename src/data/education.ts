@@ -1,9 +1,4 @@
-export interface Education {
-  id: string;
-  institution: string;
-  institutionUrl?: string;
-  description: string;
-}
+import { Education } from "@/lib/types";
 
 export const educationList: Education[] = [
   {

@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import { TechnicalSkill, SkillCategory } from "@/lib/types";
 import {
   SiHtml5,
   SiCss3,
@@ -29,17 +29,6 @@ import {
   SiAdobexd,
 } from "react-icons/si";
 import { LuClock } from "react-icons/lu";
-
-export interface TechnicalSkill {
-  name: string;
-  icon: IconType;
-}
-
-export interface SkillCategory {
-  id: string;
-  title: string;
-  skills: TechnicalSkill[];
-}
 
 export const technicalSkills: SkillCategory[] = [
   {

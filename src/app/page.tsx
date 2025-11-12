@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import ProjectsSlider from "@/components/sections/ProjectsSlider";
+import Video from "@/components/ui/Video";
 import { HiArrowRight } from "react-icons/hi2";
 
 export default function Home() {
@@ -72,13 +73,6 @@ export default function Home() {
                             width={28}
                             height={28}
                             className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-20"
-                          />
-                          <Image
-                            src="/images/avatar.jpeg"
-                            alt="Avatar 3"
-                            width={28}
-                            height={28}
-                            className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-10"
                           />
                         </div>
                       </div>
@@ -190,7 +184,7 @@ export default function Home() {
             <div className="min-w-0 w-full flex flex-col gap-10 md:gap-16 lg:gap-20 relative px-4 md:px-6 lg:px-10 mb-10 g-xl">
               <div className="min-w-0 w-full flex flex-col relative gap-6">
                 <div className="min-w-0 w-full flex flex-col relative">
-                  <ProjectsSlider startIndex={0} count={2} />
+                  <Video src="/videos/test.mp4" loop muted />
                 </div>
                 <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                   <div className="flex grow-5 relative">
@@ -207,20 +201,6 @@ export default function Home() {
                           width={28}
                           height={28}
                           className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-30"
-                        />
-                        <Image
-                          src="/images/avatar.jpeg"
-                          alt="Avatar 2"
-                          width={28}
-                          height={28}
-                          className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-20"
-                        />
-                        <Image
-                          src="/images/avatar.jpeg"
-                          alt="Avatar 3"
-                          width={28}
-                          height={28}
-                          className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-10"
                         />
                       </div>
                     </div>
@@ -261,20 +241,6 @@ export default function Home() {
                           width={28}
                           height={28}
                           className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-30"
-                        />
-                        <Image
-                          src="/images/avatar.jpeg"
-                          alt="Avatar 2"
-                          width={28}
-                          height={28}
-                          className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-20"
-                        />
-                        <Image
-                          src="/images/avatar.jpeg"
-                          alt="Avatar 3"
-                          width={28}
-                          height={28}
-                          className="rounded-full border border-foreground-light/60 dark:border-foreground-dark/60 backdrop-blur-lg bg-black/30 transition-colors duration-300 relative z-10"
                         />
                       </div>
                     </div>
