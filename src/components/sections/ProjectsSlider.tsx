@@ -3,21 +3,41 @@
 import { useState } from "react";
 import Image from "next/image";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
-import { projects } from "@/data/projects";
+import { Project, projects as allProjects } from "@/data/projects";
 
-export default function ProjectsSlider() {
+interface ProjectsSliderProps {
+  projects?: Project[];
+  startIndex?: number;
+  count?: number;
+}
+
+export default function ProjectsSlider({
+  projects,
+  startIndex = 0,
+  count,
+}: ProjectsSliderProps) {
+  // Se projects è passato, usalo direttamente
+  // Altrimenti usa startIndex e count per selezionare da allProjects
+  const displayProjects =
+    projects ||
+    (count ? allProjects.slice(startIndex, startIndex + count) : allProjects);
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? displayProjects.length - 1 : prev - 1
+    );
   };
 
   const goToNext = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === displayProjects.length - 1 ? 0 : prev + 1
+    );
   };
 
   const goToSlide = (e: React.MouseEvent, index: number) => {
@@ -34,7 +54,7 @@ export default function ProjectsSlider() {
             {/* Slider Container */}
             <div className="group relative w-full flex justify-center">
               <div className="relative w-full max-w-[960px] overflow-hidden rounded-2xl">
-                {projects.map((project, index) => (
+                {displayProjects.map((project, index) => (
                   <div
                     key={project.id}
                     className="transition-opacity duration-500 ease-in-out"
@@ -75,7 +95,7 @@ export default function ProjectsSlider() {
                 )}
 
                 {/* Next Button */}
-                {currentIndex < projects.length - 1 && (
+                {currentIndex < displayProjects.length - 1 && (
                   <button
                     type="button"
                     onClick={goToNext}
@@ -90,16 +110,19 @@ export default function ProjectsSlider() {
 
             {/* Dots Navigation */}
             <div className="flex justify-center gap-2 mt-4">
-              {projects.map((_, index) => (
+              {displayProjects.map((_, index) => (
                 <button
                   key={index}
                   type="button"
                   onClick={(e) => goToSlide(e, index)}
                   className={`transition-all duration-300 rounded-full cursor-pointer ${
                     index === currentIndex
-                      ? "w-[25%] h-0.5 bg-cyan-500"
-                      : "w-[25%] h-0.5 bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 dark:hover:bg-gray-500"
+                      ? "h-0.5 bg-cyan-500"
+                      : "h-0.5 bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 dark:hover:bg-gray-500"
                   }`}
+                  style={{
+                    width: `${100 / displayProjects.length}%`,
+                  }}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}

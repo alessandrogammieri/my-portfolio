@@ -48,7 +48,7 @@ export default function Home() {
               <div className="min-w-0 w-full flex flex-col relative px-4 md:px-6 lg:px-10 mb-10">
                 <div className="min-w-0 w-full flex flex-col relative gap-6">
                   <div className="min-w-0 w-full flex flex-col relative">
-                    <ProjectsSlider />
+                    <ProjectsSlider startIndex={0} count={4} />
                   </div>
                   <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                     <div className="flex grow-5 relative">
@@ -190,7 +190,7 @@ export default function Home() {
             <div className="min-w-0 w-full flex flex-col gap-10 md:gap-16 lg:gap-20 relative px-4 md:px-6 lg:px-10 mb-10 g-xl">
               <div className="min-w-0 w-full flex flex-col relative gap-6">
                 <div className="min-w-0 w-full flex flex-col relative">
-                  <ProjectsSlider />
+                  <ProjectsSlider startIndex={0} count={2} />
                 </div>
                 <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                   <div className="flex grow-5 relative">
@@ -244,7 +244,7 @@ export default function Home() {
               </div>
               <div className="min-w-0 w-full flex flex-col relative gap-6">
                 <div className="min-w-0 w-full flex flex-col relative">
-                  <ProjectsSlider />
+                  <ProjectsSlider startIndex={2} count={2} />
                 </div>
                 <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                   <div className="flex grow-5 relative">
