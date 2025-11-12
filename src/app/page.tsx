@@ -30,10 +30,10 @@ export default function Home() {
                 </h1>
               </div>
               <div className="min-w-0 w-full flex justify-center relative pb-8">
-                <span className="text-xl md:text-2xl lg:text-3xl font-light text-gray-600 dark:text-gray-400">
-                  I'm Selene, a design engineer at, where I craft intuitive user
+                <p className="text-xl md:text-2xl lg:text-3xl font-light text-gray-600 dark:text-gray-400 text-balance">
+                  I'm a design engineer passionate about creating intuitive user
                   experiences. After hours, I build my own projects.
-                </span>
+                </p>
               </div>
               <div className="min-w-0 w-full flex justify-center relative pt-3">
                 <Button
@@ -55,7 +55,7 @@ export default function Home() {
                   <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                     <div className="flex grow-5 relative">
                       <h2 className="text-lg md:text-xl lg:text-2xl font-semibold">
-                        Building Once UI, a Customizable Design System
+                        Featured Project Showcase
                       </h2>
                     </div>
                     <div className="flex flex-col gap-4 grow-7 relative">
@@ -86,6 +86,7 @@ export default function Home() {
                         <Link
                           href="/progetti"
                           title="Read case study"
+                          aria-label="Read detailed case study"
                           className="group flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-500 mb-6 hover:gap-3 active:gap-3 transition-all duration-300"
                         >
                           <span>Read case study</span>
@@ -182,7 +183,7 @@ export default function Home() {
                 <div className="max-w-3xl w-full h-0.5 bg-gray-400 dark:bg-gray-600"></div>
               </div>
             </div>
-            <div className="min-w-0 w-full flex flex-col gap-10 md:gap-16 lg:gap-20 relative px-4 md:px-6 lg:px-10 mb-10 g-xl">
+            <div className="min-w-0 w-full flex flex-col gap-10 md:gap-16 lg:gap-20 relative px-4 md:px-6 lg:px-10 mb-10">
               <div className="min-w-0 w-full flex flex-col relative gap-6">
                 <div className="min-w-0 w-full flex flex-col relative">
                   <Video src="/videos/test.mp4" loop muted />
@@ -190,7 +191,7 @@ export default function Home() {
                 <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                   <div className="flex grow-5 relative">
                     <h2 className="text-lg md:text-xl lg:text-2xl font-semibold">
-                      Building Once UI, a Customizable Design System
+                      Interactive Project Demo
                     </h2>
                   </div>
                   <div className="flex flex-col gap-4 grow-7 relative">
@@ -206,17 +207,17 @@ export default function Home() {
                       </div>
                     </div>
                     <span className="text-sm md:text-base font-light text-gray-600 dark:text-gray-400">
-                      Development of a flexible and highly customizable design
-                      system using Next.js for front-end and Figma for design
-                      collaboration.
+                      Watch this interactive demo showcasing real-time features
+                      and dynamic user interactions in our latest project.
                     </span>
                     <div className="flex relative">
                       <Link
                         href="/progetti"
-                        title="Read case study"
+                        title="View full project"
+                        aria-label="View full project details"
                         className="group flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-500 mb-6 hover:gap-3 active:gap-3 transition-all duration-300"
                       >
-                        <span>Read case study</span>
+                        <span>View full project</span>
                         <HiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-active:translate-x-0.5" />
                       </Link>
                     </div>
@@ -230,7 +231,7 @@ export default function Home() {
                 <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                   <div className="flex grow-5 relative">
                     <h2 className="text-lg md:text-xl lg:text-2xl font-semibold">
-                      Building Once UI, a Customizable Design System
+                      Featured Project Showcase
                     </h2>
                   </div>
                   <div className="flex flex-col gap-4 grow-7 relative">
@@ -246,17 +247,18 @@ export default function Home() {
                       </div>
                     </div>
                     <span className="text-sm md:text-base font-light text-gray-600 dark:text-gray-400">
-                      Development of a flexible and highly customizable design
-                      system using Next.js for front-end and Figma for design
-                      collaboration.
+                      Explore our recent collaborations with clients, featuring
+                      custom solutions and innovative approaches to complex
+                      challenges.
                     </span>
                     <div className="flex relative">
                       <Link
                         href="/progetti"
-                        title="Read case study"
+                        title="Explore case study"
+                        aria-label="Explore detailed case study"
                         className="group flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-500 mb-6 hover:gap-3 active:gap-3 transition-all duration-300"
                       >
-                        <span>Read case study</span>
+                        <span>Explore case study</span>
                         <HiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-active:translate-x-0.5" />
                       </Link>
                     </div>
