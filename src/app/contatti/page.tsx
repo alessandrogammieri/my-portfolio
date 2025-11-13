@@ -1,3 +1,9 @@
+import Button from "@/components/ui/Button";
+import ContactForm from "@/components/sections/ContactForm";
+import { HiCalendarDays } from "react-icons/hi2";
+import Link from "next/link";
+import { social } from "@/data/social";
+
 export const metadata = {
   title: {
     default: "Contatti",
@@ -8,13 +14,62 @@ export const metadata = {
 
 export default function Contact() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1 className="text-3xl font-bold">Contact Page</h1>
-        <p className="text-lg">
-          This is the Contact page of our application. Here you can find various
-          tasks and projects.
-        </p>
+    <div className="min-w-0 w-full flex justify-center relative p-3 md:p-6 lg:p-10">
+      <main className="min-w-0 w-full flex justify-center relative">
+        <div className="max-w-5xl w-full flex flex-col relative py-3">
+          <div className="min-w-0 w-full flex flex-col items-center gap-10 md:gap-16 lg:gap-20 relative">
+            <div className="max-w-3xl w-full flex flex-col items-center relative text-center">
+              <div className="min-w-0 w-full flex justify-center relative pt-4 pb-8">
+                <Button
+                  href="https://calendly.com/"
+                  icon={HiCalendarDays}
+                  chevron
+                  external={true}
+                >
+                  Fissiamo una call
+                </Button>
+              </div>
+              <div className="min-w-0 w-full flex justify-center relative pb-4">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-balance">
+                  Building bridges between design and code
+                </h1>
+              </div>
+              <div className="min-w-0 w-full flex justify-center relative pb-8">
+                <p className="text-xl md:text-2xl lg:text-3xl font-light text-gray-600 dark:text-gray-400 text-balance">
+                  I'm a design engineer passionate about creating intuitive user
+                  experiences. After hours, I build my own projects.
+                </p>
+              </div>
+              <div className="w-fit flex flex-wrap gap-2 justify-center relative py-3">
+                {social.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}
+                      className="min-h-8 min-w-8 md:min-w-0 h-8 w-8 md:w-fit flex justify-center items-center gap-2 bg-transparent hover:bg-gray-400/10 focus:bg-gray-400/10 border border-gray-400/10 rounded-3xl md:px-3 md:py-0.5 transition-all duration-200"
+                    >
+                      <span className="h-fit w-fit inline-flex relative">
+                        <Icon className="w-4 h-4" />
+                      </span>
+                      <div className="hidden md:flex relative text-xs">
+                        {item.label}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+            <ContactForm
+              title="Get in Touch"
+              description="Send me a message and I'll get back to you as soon as possible"
+              actionUrl="/api/contact"
+            />
+          </div>
+        </div>
       </main>
     </div>
   );
