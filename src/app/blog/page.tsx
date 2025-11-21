@@ -20,7 +20,7 @@ export default function Blog() {
           <div className="min-w-0 w-full flex flex-col gap-10 relative">
             <div className="w-full grid grid-cols-1 relative gap-4 mb-10">
               <Link
-                href="/blog"
+                href="/blog/my-first-post"
                 title="Read case study"
                 className="min-w-0 w-full flex p-0 border-none outline-0 bg-none"
               >
