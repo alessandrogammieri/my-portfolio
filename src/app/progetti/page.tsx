@@ -26,7 +26,7 @@ export default async function Works({
         <div className="max-w-5xl w-full flex flex-col relative py-3">
           <div className="min-w-0 w-full flex flex-col items-center gap-10 md:gap-16 lg:gap-20 relative">
             <div className="max-w-3xl w-full flex flex-col items-center relative text-center">
-              <div className="min-w-0 w-full flex justify-center relative pt-4 pb-8">
+              <div className="min-w-0 w-full flex justify-center relative pt-3 pb-8">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-balance leading-none">
                   Progetti e Idee
                 </h1>

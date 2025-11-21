@@ -28,13 +28,13 @@ export default async function Project({ params }: Props) {
   return (
     <div className="min-w-0 w-full flex justify-center relative p-3 md:p-6 lg:p-10">
       <main className="min-w-0 w-full flex justify-center relative">
-        <div className="max-w-5xl w-full flex flex-col items-center gap-4 md:gap-6 lg:gap-10 relative">
+        <div className="max-w-5xl w-full flex flex-col items-center gap-4 md:gap-6 lg:gap-10 relative py-3">
           <div className="max-w-3xl w-full flex flex-col items-center gap-4 relative text-center">
             <Link
               href="/progetti"
               title="Explore case study"
               aria-label="Explore detailed case study"
-              className="group flex items-center text-sm text-cyan-600 dark:text-cyan-500 hover:text-[#0a0a0a] hover:dark:text-white transition-all duration-300"
+              className="group flex items-center text-sm mt-3 text-cyan-600 dark:text-cyan-500 hover:text-[#0a0a0a] hover:dark:text-white transition-all duration-300"
             >
               <span className="font-semibold">Progetti</span>
             </Link>
