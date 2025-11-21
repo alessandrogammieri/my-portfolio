@@ -131,7 +131,7 @@ export default async function Post({ params }: Props) {
               using Next.js for front-end and Figma for design collaboration.
             </p>
           </article>
-          <div className="min-w-0 w-full flex items-center justify-center gap-4 relative mt-8 mb-4">
+          <div className="min-w-0 w-full flex flex-col sm:flex-row items-center justify-center gap-4 relative mt-8 mb-4">
             <span className="text-gray-600 dark:text-gray-400">
               Share this post:
             </span>
