@@ -19,8 +19,8 @@ interface FormErrors {
 }
 
 export default function ContactForm({
-  title = "Get in Touch",
-  description = "Send me a message and I'll get back to you as soon as possible",
+  title = "Restiamo in contatto",
+  description = "Hai un'idea o un progetto? Mandami un messaggio e ne parliamo",
   actionUrl = "/api/contact",
 }: ContactFormProps) {
   const [status, setStatus] = useState<
@@ -158,7 +158,7 @@ export default function ContactForm({
     // Se honeypot è compilato, è un bot
     if (data.honeypot) {
       setStatus("success");
-      setMessage("Messaggio inviato con successo!");
+      setMessage("Grazie! Ti risponderò al più presto");
       formRef.current?.reset();
       setIsSubmitting(false);
       return;
@@ -175,7 +175,7 @@ export default function ContactForm({
 
       if (response.ok) {
         setStatus("success");
-        setMessage("Messaggio inviato con successo!");
+        setMessage("Grazie! Ti risponderò al più presto");
         formRef.current?.reset();
         setErrors({});
       } else {
@@ -422,12 +422,14 @@ export default function ContactForm({
 
           {/* Response Messages */}
           {status === "success" && (
-            <div className="text-sm text-green-600 dark:text-green-500 text-center">
+            <div className="text-sm text-cyan-600 dark:text-cyan-500 text-center font-semibold">
               {message}
             </div>
           )}
           {status === "error" && (
-            <div className="text-sm text-rose-400 text-center">{message}</div>
+            <div className="text-sm text-rose-400 text-center font-semibold">
+              {message}
+            </div>
           )}
 
           {/* Submit Button */}

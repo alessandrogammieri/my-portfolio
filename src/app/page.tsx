@@ -269,7 +269,6 @@ export default function Home() {
             <ContactForm
               title="Hai un progetto o una domanda?"
               description="Scrivimi e ti risponderò il prima possibile"
-              actionUrl="/api/contact"
             />
           </div>
         </div>

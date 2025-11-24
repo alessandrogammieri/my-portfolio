@@ -66,7 +66,6 @@ export default function Contact() {
             <ContactForm
               title="Restiamo in contatto"
               description="Hai un'idea o un progetto? Mandami un messaggio e ne parliamo"
-              actionUrl="/api/contact"
             />
           </div>
         </div>
