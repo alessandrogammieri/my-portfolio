@@ -26,13 +26,13 @@ export default function Home() {
               </div>
               <div className="min-w-0 w-full flex justify-center relative pb-4">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-balance">
-                  Building bridges between design and code
+                  Unisco design, tecnologia e soluzioni reali
                 </h1>
               </div>
               <div className="min-w-0 w-full flex justify-center relative pb-8">
                 <p className="text-xl md:text-2xl lg:text-3xl font-light text-gray-600 dark:text-gray-400 text-balance">
-                  I'm a design engineer passionate about creating intuitive user
-                  experiences. After hours, I build my own projects.
+                  Creo soluzioni digitali performanti, curate nei dettagli e
+                  progettate per crescere con il tuo progetto.
                 </p>
               </div>
               <div className="min-w-0 w-full flex justify-center relative pt-3">
@@ -55,7 +55,7 @@ export default function Home() {
                   <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                     <div className="flex grow-5 relative">
                       <h2 className="text-lg md:text-xl lg:text-2xl font-semibold">
-                        Featured Project Showcase
+                        Piattaforma budget LAV
                       </h2>
                     </div>
                     <div className="flex flex-col gap-4 grow-7 relative">
@@ -84,12 +84,12 @@ export default function Home() {
                       </span>
                       <div className="flex relative">
                         <Link
-                          href="/progetti"
-                          title="Read case study"
-                          aria-label="Read detailed case study"
+                          href="/progetti/piattaforma-budget-lav"
+                          title="Esplora il progetto"
+                          aria-label="Esplora i dettagli del progetto"
                           className="group flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-500 mb-6 hover:gap-3 active:gap-3 transition-all duration-300"
                         >
-                          <span>Read case study</span>
+                          <span>Esplora il progetto</span>
                           <HiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-active:translate-x-0.5" />
                         </Link>
                       </div>
@@ -105,7 +105,7 @@ export default function Home() {
               <div className="min-w-0 w-full flex flex-col md:flex-row gap-6 relative mt-10">
                 <div className="flex relative grow-1 pl-4 md:pl-6 lg:pl-10 pt-6">
                   <h2 className="text-2xl lg:text-3xl font-semibold">
-                    Latest from the blog
+                    Novità dal Blog
                   </h2>
                 </div>
                 <div className="flex grow-3 relative px-5">
@@ -191,7 +191,7 @@ export default function Home() {
                 <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                   <div className="flex grow-5 relative">
                     <h2 className="text-lg md:text-xl lg:text-2xl font-semibold">
-                      Interactive Project Demo
+                      Musica e creatività in armonia
                     </h2>
                   </div>
                   <div className="flex flex-col gap-4 grow-7 relative">
@@ -212,12 +212,12 @@ export default function Home() {
                     </span>
                     <div className="flex relative">
                       <Link
-                        href="/progetti"
-                        title="View full project"
-                        aria-label="View full project details"
+                        href="/progetti/massimo-di-cristofaro"
+                        title="Scopri il progetto"
+                        aria-label="Scopri il progetto completo"
                         className="group flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-500 mb-6 hover:gap-3 active:gap-3 transition-all duration-300"
                       >
-                        <span>View full project</span>
+                        <span>Scopri il progetto</span>
                         <HiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-active:translate-x-0.5" />
                       </Link>
                     </div>
@@ -231,7 +231,7 @@ export default function Home() {
                 <div className="min-w-0 w-full flex flex-col md:flex-row gap-4 relative pt-3 pb-6 px-2">
                   <div className="flex grow-5 relative">
                     <h2 className="text-lg md:text-xl lg:text-2xl font-semibold">
-                      Featured Project Showcase
+                      Soluzioni e decison making
                     </h2>
                   </div>
                   <div className="flex flex-col gap-4 grow-7 relative">
@@ -253,12 +253,12 @@ export default function Home() {
                     </span>
                     <div className="flex relative">
                       <Link
-                        href="/progetti"
-                        title="Explore case study"
-                        aria-label="Explore detailed case study"
+                        href="/progetti/sindia-consulting"
+                        title="Dentro il progetto"
+                        aria-label="Esplora i dettagli del progetto"
                         className="group flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-500 mb-6 hover:gap-3 active:gap-3 transition-all duration-300"
                       >
-                        <span>Explore case study</span>
+                        <span>Dentro il progetto</span>
                         <HiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-active:translate-x-0.5" />
                       </Link>
                     </div>
@@ -267,8 +267,8 @@ export default function Home() {
               </div>
             </div>
             <ContactForm
-              title="Get in Touch"
-              description="Send me a message and I'll get back to you as soon as possible"
+              title="Hai un progetto o una domanda?"
+              description="Scrivimi e ti risponderò il prima possibile"
               actionUrl="/api/contact"
             />
           </div>

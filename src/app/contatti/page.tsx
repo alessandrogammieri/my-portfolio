@@ -31,13 +31,13 @@ export default function Contact() {
               </div>
               <div className="min-w-0 w-full flex justify-center relative pb-4">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-balance">
-                  Building bridges between design and code
+                  Manteniamo viva la conversazione
                 </h1>
               </div>
               <div className="min-w-0 w-full flex justify-center relative pb-8">
                 <p className="text-xl md:text-2xl lg:text-3xl font-light text-gray-600 dark:text-gray-400 text-balance">
-                  I'm a design engineer passionate about creating intuitive user
-                  experiences. After hours, I build my own projects.
+                  Se hai un'idea, una proposta o una curiosità, manda pure un
+                  messaggio.
                 </p>
               </div>
               <div className="w-fit flex flex-wrap gap-2 justify-center relative py-3">
@@ -64,8 +64,8 @@ export default function Contact() {
               </div>
             </div>
             <ContactForm
-              title="Get in Touch"
-              description="Send me a message and I'll get back to you as soon as possible"
+              title="Restiamo in contatto"
+              description="Hai un'idea o un progetto? Mandami un messaggio e ne parliamo"
               actionUrl="/api/contact"
             />
           </div>

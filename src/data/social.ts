@@ -22,7 +22,7 @@ export const social: NavItem[] = [
     external: true,
   },
   {
-    href: "mailto:alessandrogammieri.it@gmail.com",
+    href: "mailto:agammieri.dev@gmail.com",
     label: "Email",
     icon: HiEnvelope,
   },
