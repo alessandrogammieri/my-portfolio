@@ -1,8 +1,30 @@
-﻿import Image from "next/image";
+﻿"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { workExperiences } from "@/data/workExperience";
+import Lightbox from "@/components/ui/Lightbox";
 
 export default function WorkExperience() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  } | null>(null);
+
+  const openLightbox = (image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  }) => {
+    setSelectedImage(image);
+    setLightboxOpen(true);
+  };
+
   return (
     <div className="min-w-0 w-full relative">
       <h2 className="text-3xl md:text-4xl font-semibold text-balance mb-6">
@@ -61,7 +83,11 @@ export default function WorkExperience() {
                     key={index}
                     className="min-w-64 h-36 flex relative rounded-lg border border-foreground-light/60 dark:border-foreground-dark/60"
                   >
-                    <div className="min-w-0 w-full flex flex-col relative overflow-hidden cursor-pointer rounded-lg isolate outline-0">
+                    <button
+                      onClick={() => openLightbox(image)}
+                      className="min-w-0 w-full flex flex-col relative overflow-hidden cursor-pointer rounded-lg isolate outline-0 hover:opacity-80 transition-opacity duration-200"
+                      aria-label={`Apri ${image.alt} in lightbox`}
+                    >
                       <Image
                         src={image.src}
                         width={image.width}
@@ -69,7 +95,7 @@ export default function WorkExperience() {
                         alt={image.alt}
                         className="h-full w-full object-cover"
                       />
-                    </div>
+                    </button>
                   </div>
                 ))}
               </div>
@@ -77,6 +103,14 @@ export default function WorkExperience() {
           </div>
         ))}
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && selectedImage && (
+        <Lightbox
+          image={selectedImage}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </div>
   );
 }
