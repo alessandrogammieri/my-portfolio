@@ -3,14 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
-import { Project } from "@/lib/types";
+import { Project, ProjectsSliderProps } from "@/lib/types";
 import { projects as allProjects } from "@/data/projects";
-
-interface ProjectsSliderProps {
-  projects?: Project[];
-  startIndex?: number;
-  count?: number;
-}
 
 export default function ProjectsSlider({
   projects,

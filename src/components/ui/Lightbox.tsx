@@ -2,16 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-
-interface LightboxProps {
-  image: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
-  onClose: () => void;
-}
+import { LightboxProps } from "@/lib/types";
 
 export default function Lightbox({ image, onClose }: LightboxProps) {
   useEffect(() => {

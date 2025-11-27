@@ -1,11 +1,5 @@
-import { HTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactNode;
-  variant?: "default" | "glass" | "gradient";
-  hover?: boolean;
-}
+import { CardProps } from "@/lib/types";
 
 export default function Card({
   children,

@@ -3,20 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Form from "next/form";
 import { HiChevronDown } from "react-icons/hi2";
-
-interface ContactFormProps {
-  title?: string;
-  description?: string;
-  actionUrl?: string;
-}
-
-interface FormErrors {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  subject?: string;
-  message?: string;
-}
+import { ContactFormProps, FormErrors } from "@/lib/types";
 
 export default function ContactForm({
   title = "Restiamo in contatto",

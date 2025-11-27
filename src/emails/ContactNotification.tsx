@@ -9,14 +9,7 @@ import {
   Text,
   Hr,
 } from "@react-email/components";
-
-interface ContactNotificationProps {
-  firstName: string;
-  lastName: string;
-  email: string;
-  subject: string;
-  message: string;
-}
+import { ContactNotificationProps } from "@/lib/types";
 
 export default function ContactNotification({
   firstName,

@@ -3,12 +3,7 @@
 import { useState } from "react";
 import { HiOutlineLink, HiOutlineEnvelope, HiCheck } from "react-icons/hi2";
 import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
-
-interface ShareButtonsProps {
-  url: string;
-  title: string;
-  description?: string;
-}
+import { ShareButtonsProps } from "@/lib/types";
 
 export default function ShareButtons({
   url,

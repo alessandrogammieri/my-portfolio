@@ -2,12 +2,7 @@
 
 import { useState } from "react";
 import { HiClipboard, HiCheck } from "react-icons/hi2";
-
-interface CodeBlockProps {
-  code: string;
-  language?: string;
-  showLineNumbers?: boolean;
-}
+import { CodeBlockProps } from "@/lib/types";
 
 export default function CodeBlock({
   code,
