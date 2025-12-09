@@ -1,12 +1,18 @@
-import Link from "next/link";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 import ProjectShowcase from "@/components/sections/ProjectShowcase";
 import ContactForm from "@/components/sections/ContactForm";
-import { projectShowcaseSections } from "@/data/projects";
+import { ProjectShowcaseSection } from "@/lib/types";
 import { HiArrowRight } from "react-icons/hi2";
+import Link from "next/link";
+import Image from "next/image";
+import axios from "axios";
 
-export default function Home() {
+export default async function Home() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const { data: projectShowcaseSections } = await axios.get<
+    ProjectShowcaseSection[]
+  >(`${baseUrl}/data/projects.json`);
+
   return (
     <div className="min-w-0 w-full flex justify-center relative p-3 md:p-6 lg:p-10">
       <main className="min-w-0 w-full flex justify-center relative">

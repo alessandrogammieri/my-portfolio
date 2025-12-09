@@ -1,4 +1,4 @@
-import { TechnicalSkill, SkillCategory } from "@/lib/types";
+import { SkillCategory } from "@/lib/types";
 import {
   SiHtml5,
   SiCss3,

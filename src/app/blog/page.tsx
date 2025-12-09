@@ -1,5 +1,6 @@
 import BlogPostList from "@/components/sections/BlogPostList";
-import { blogSections } from "@/data/blogs";
+import { BlogPost, BlogPostSection } from "@/lib/types";
+import axios from "axios";
 
 export const metadata = {
   title: {
@@ -9,7 +10,28 @@ export const metadata = {
     "Nel mio blog condivido articoli e risorse sullo sviluppo web moderno. Condivido esperienze e soluzioni pratiche per chi lavora con tecnologie moderne come Node.js, Next.js e React.",
 };
 
-export default function Blog() {
+export default async function Blog() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const { data: posts } = await axios.get<BlogPost[]>(
+    `${baseUrl}/data/blogs.json`
+  );
+
+  const blogSections: BlogPostSection[] = [
+    {
+      posts: [posts[0]],
+      layout: "single",
+    },
+    {
+      posts: [posts[1], posts[2]],
+      layout: "grid",
+    },
+    {
+      title: "Earlier posts",
+      posts: posts.slice(3),
+      layout: "grid",
+    },
+  ];
+
   return (
     <div className="min-w-0 w-full flex justify-center relative p-3 md:p-6 lg:p-10">
       <main className="min-w-0 w-full flex justify-center relative">

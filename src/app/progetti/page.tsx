@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import ProjectShowcase from "@/components/sections/ProjectShowcase";
-import { projectShowcaseSections } from "@/data/projects";
+import { ProjectShowcaseSection } from "@/lib/types";
+import axios from "axios";
 
 export const metadata = {
   title: {
@@ -16,6 +17,10 @@ export default async function Works({
   params: Promise<{ slug: string[] }>;
 }) {
   const { slug } = await params;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const { data: projectShowcaseSections } = await axios.get<
+    ProjectShowcaseSection[]
+  >(`${baseUrl}/data/projects.json`);
 
   return (
     <div className="min-w-0 w-full flex justify-center relative p-3 md:p-6 lg:p-10">

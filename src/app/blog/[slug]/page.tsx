@@ -5,26 +5,30 @@ import { notFound } from "next/navigation";
 import ShareButtons from "@/components/ui/ShareButtons";
 import BlogCard from "@/components/ui/BlogCard";
 import BlogContent from "@/components/ui/BlogContent";
-import {
-  getBlogPostBySlug,
-  getRecentBlogPosts,
-  getAllBlogSlugs,
-} from "@/data/blogs";
+import { BlogPost } from "@/lib/types";
+import axios from "axios";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
-  const slugs = getAllBlogSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const { data: posts } = await axios.get<BlogPost[]>(
+    `${baseUrl}/data/blogs.json`
+  );
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const { data: posts } = await axios.get<BlogPost[]>(
+    `${baseUrl}/data/blogs.json`
+  );
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     return {
@@ -44,8 +48,12 @@ export const generateMetadata = async ({
 
 export default async function Post({ params }: Props) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
-  const recentPosts = getRecentBlogPosts(2);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const { data: posts } = await axios.get<BlogPost[]>(
+    `${baseUrl}/data/blogs.json`
+  );
+  const post = posts.find((p) => p.slug === slug);
+  const recentPosts = posts.slice(0, 2);
 
   if (!post) {
     notFound();
