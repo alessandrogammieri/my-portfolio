@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
-import { Project, ProjectsSliderProps } from "@/lib/types";
-import { projects as allProjects } from "@/data/projects";
+import { ProjectsSliderProps } from "@/lib/types";
 
 export default function ProjectsSlider({
   projects,
@@ -12,10 +11,7 @@ export default function ProjectsSlider({
   count,
 }: ProjectsSliderProps) {
   // Se projects è passato, usalo direttamente
-  // Altrimenti usa startIndex e count per selezionare da allProjects
-  const displayProjects =
-    projects ||
-    (count ? allProjects.slice(startIndex, startIndex + count) : allProjects);
+  const displayProjects = projects || [];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

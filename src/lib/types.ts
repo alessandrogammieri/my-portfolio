@@ -32,6 +32,31 @@ export interface ProjectsSliderProps {
   count?: number;
 }
 
+// Project Showcase (Homepage Sections)
+export type ProjectShowcaseMediaType = 'slider' | 'video' | 'single-image';
+
+export interface ProjectShowcaseAvatar {
+  src: string;
+  alt: string;
+}
+
+export interface ProjectShowcaseSection {
+  id: string;
+  title: string;
+  description: string;
+  linkText: string;
+  linkHref: string;
+  avatars: ProjectShowcaseAvatar[];
+  mediaType: ProjectShowcaseMediaType;
+  // Per slider - array di progetti da mostrare
+  projects?: Project[];
+  // Per video
+  videoSrc?: string;
+  // Per singola immagine
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
 // Blog
 export interface BlogPost {
   id: string;
