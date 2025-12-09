@@ -42,7 +42,7 @@ export const generateMetadata = async ({
       template:
         "%s | Alessandro Gammieri - Full Stack Developer & Web Architect",
     },
-    description: post.excerpt,
+    description: post.category,
   };
 };
 
@@ -123,7 +123,7 @@ export default async function Post({ params }: Props) {
             <ShareButtons
               url={`https://tuosito.com/blog/${post.slug}`}
               title={post.title}
-              description={post.excerpt}
+              description={post.category}
             />
           </div>
           {recentPosts.length > 0 && (

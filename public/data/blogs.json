@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "Quick start with Magic Portfolio",
-    "excerpt": "Magic Portfolio",
+    "category": "Magic Portfolio",
     "content": "Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration.",
     "publishedAt": "23 Aprile 2025",
     "tags": ["Next.js", "React"],
@@ -52,7 +52,7 @@
   {
     "id": "2",
     "title": "Quick start with Magic Portfolio",
-    "excerpt": "Magic Portfolio",
+    "category": "Magic Portfolio",
     "content": "Content here...",
     "publishedAt": "23 Aprile 2025",
     "tags": ["TypeScript"],
@@ -66,7 +66,7 @@
   {
     "id": "3",
     "title": "Quick start with Magic Portfolio",
-    "excerpt": "Magic Portfolio",
+    "category": "Magic Portfolio",
     "content": "Content here...",
     "publishedAt": "23 Aprile 2025",
     "tags": ["Design"],
@@ -80,7 +80,7 @@
   {
     "id": "4",
     "title": "Quick start with Magic Portfolio",
-    "excerpt": "Magic Portfolio",
+    "category": "Magic Portfolio",
     "content": "Content here...",
     "publishedAt": "23 Aprile 2025",
     "tags": ["Development"],
@@ -93,7 +93,7 @@
   {
     "id": "5",
     "title": "Quick start",
-    "excerpt": "Magic Portfolio",
+    "category": "Magic Portfolio",
     "content": "Content here...",
     "publishedAt": "23 Aprile 2025",
     "tags": ["Tutorial"],
@@ -106,7 +106,7 @@
   {
     "id": "6",
     "title": "Quick start with Magic Portfolio",
-    "excerpt": "Magic Portfolio",
+    "category": "Magic Portfolio",
     "content": "Content here...",
     "publishedAt": "23 Aprile 2025",
     "tags": ["Guide"],
@@ -119,7 +119,7 @@
   {
     "id": "7",
     "title": "Quick start with Magic Portfolio",
-    "excerpt": "Magic Portfolio",
+    "category": "Magic Portfolio",
     "content": "Content here...",
     "publishedAt": "23 Aprile 2025",
     "tags": ["Best Practices"],
@@ -132,7 +132,7 @@
   {
     "id": "8",
     "title": "Quick start with Magic Portfolio",
-    "excerpt": "Magic Portfolio",
+    "category": "Magic Portfolio",
     "content": "Content here...",
     "publishedAt": "23 Aprile 2025",
     "tags": ["Tips"],

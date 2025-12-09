@@ -59,9 +59,9 @@ export default function BlogCard({
               {post.title}
             </span>
 
-            {/* Excerpt */}
+            {/* Category */}
             <span className="text-xs md:text-sm font-light text-gray-600 dark:text-gray-400">
-              {post.excerpt}
+              {post.category}
             </span>
           </div>
         </div>

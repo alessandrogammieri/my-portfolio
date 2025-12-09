@@ -67,7 +67,7 @@ export interface BlogContentSection {
 export interface BlogPost {
   id: string;
   title: string;
-  excerpt: string;
+  category: string;
   content: string;
   fullContent?: BlogContentSection[]; // Contenuto strutturato per la pagina del singolo post
   publishedAt: string;
