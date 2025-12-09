@@ -1,0 +1,145 @@
+[
+  {
+    "id": "1",
+    "title": "Quick start with Magic Portfolio",
+    "category": "Magic Portfolio",
+    "content": "Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration.",
+    "publishedAt": "23 Aprile 2025",
+    "tags": ["Next.js", "React"],
+    "featured": true,
+    "image": "/images/projects/image.jpeg",
+    "coverImage": "/images/projects/image2.jpeg",
+    "readTime": 5,
+    "slug": "my-first-post",
+    "author": "Alessandro Gammieri",
+    "authorAvatar": "/images/avatar.jpeg",
+    "fullContent": [
+      {
+        "type": "heading",
+        "content": "Overview"
+      },
+      {
+        "type": "paragraph",
+        "content": "Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration."
+      },
+      {
+        "type": "heading",
+        "content": "Key Features"
+      },
+      {
+        "type": "list",
+        "content": [
+          "**Component Library**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.",
+          "**Design Tokens**: Implemented a comprehensive set of design tokens for colors, typography, spacing, and other visual properties.",
+          "**Documentation**: Created detailed documentation for each component with examples and best practices."
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Installation"
+      },
+      {
+        "type": "code",
+        "content": "npm install magic-portfolio",
+        "language": "bash"
+      },
+      {
+        "type": "paragraph",
+        "content": "After installation, you can start using the components in your Next.js application."
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Quick start with Magic Portfolio",
+    "category": "Magic Portfolio",
+    "content": "Content here...",
+    "publishedAt": "23 Aprile 2025",
+    "tags": ["TypeScript"],
+    "featured": false,
+    "image": "/images/projects/image.jpeg",
+    "readTime": 3,
+    "slug": "second-post",
+    "author": "agDeveloper",
+    "authorAvatar": "/images/avatar.jpeg"
+  },
+  {
+    "id": "3",
+    "title": "Quick start with Magic Portfolio",
+    "category": "Magic Portfolio",
+    "content": "Content here...",
+    "publishedAt": "23 Aprile 2025",
+    "tags": ["Design"],
+    "featured": false,
+    "image": "/images/projects/image.jpeg",
+    "readTime": 4,
+    "slug": "third-post",
+    "author": "agDeveloper",
+    "authorAvatar": "/images/avatar.jpeg"
+  },
+  {
+    "id": "4",
+    "title": "Quick start with Magic Portfolio",
+    "category": "Magic Portfolio",
+    "content": "Content here...",
+    "publishedAt": "23 Aprile 2025",
+    "tags": ["Development"],
+    "featured": false,
+    "readTime": 6,
+    "slug": "fourth-post",
+    "author": "agDeveloper",
+    "authorAvatar": "/images/avatar.jpeg"
+  },
+  {
+    "id": "5",
+    "title": "Quick start",
+    "category": "Magic Portfolio",
+    "content": "Content here...",
+    "publishedAt": "23 Aprile 2025",
+    "tags": ["Tutorial"],
+    "featured": false,
+    "readTime": 7,
+    "slug": "fifth-post",
+    "author": "agDeveloper",
+    "authorAvatar": "/images/avatar.jpeg"
+  },
+  {
+    "id": "6",
+    "title": "Quick start with Magic Portfolio",
+    "category": "Magic Portfolio",
+    "content": "Content here...",
+    "publishedAt": "23 Aprile 2025",
+    "tags": ["Guide"],
+    "featured": false,
+    "readTime": 2,
+    "slug": "sixth-post",
+    "author": "agDeveloper",
+    "authorAvatar": "/images/avatar.jpeg"
+  },
+  {
+    "id": "7",
+    "title": "Quick start with Magic Portfolio",
+    "category": "Magic Portfolio",
+    "content": "Content here...",
+    "publishedAt": "23 Aprile 2025",
+    "tags": ["Best Practices"],
+    "featured": false,
+    "readTime": 8,
+    "slug": "seventh-post",
+    "author": "agDeveloper",
+    "authorAvatar": "/images/avatar.jpeg"
+  },
+  {
+    "id": "8",
+    "title": "Quick start with Magic Portfolio",
+    "category": "Magic Portfolio",
+    "content": "Content here...",
+    "publishedAt": "23 Aprile 2025",
+    "tags": ["Tips"],
+    "featured": false,
+    "readTime": 3,
+    "slug": "eighth-post",
+    "author": "agDeveloper",
+    "authorAvatar": "/images/avatar.jpeg"
+  }
+]

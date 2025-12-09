@@ -1,0 +1,160 @@
+[
+  {
+    "id": "adnkronos-2025",
+    "company": "ADNKRONOS",
+    "companyUrl": "https://www.adnkronos.com/",
+    "role": "Full Stack Developer",
+    "period": "lug 2025 - Presente",
+    "achievements": [
+      "Sviluppo e manutenzione di soluzioni web scalabili, con particolare attenzione all'integrazione tra sistemi e alla gestione delle applicazioni.",
+      "Collaborazione ai processi di System Integration e DevOps, contribuendo al miglioramento continuo delle infrastrutture e dei flussi di lavoro."
+    ],
+    "images": [
+      {
+        "src": "/images/projects/adnkronos/Immediapress-Dashboard.png",
+        "alt": "Immediapress Dashboard",
+        "width": 255,
+        "height": 143
+      }
+    ]
+  },
+  {
+    "id": "hays-solutions",
+    "company": "HAYS SOLUTIONS",
+    "companyUrl": "https://www.hays.it/",
+    "role": "Full Stack Developer",
+    "period": "nov 2024 - giu 2025",
+    "consultingFor": {
+      "name": "ADNKRONOS",
+      "url": "https://www.adnkronos.com/"
+    },
+    "achievements": [
+      "Implementazione di una piattaforma gestionale in Laravel con funzioni avanzate di distribuzione comunicati e gestione clienti.",
+      "Gestione della manutenzione e aggiornamento del CMS aziendale, con interventi mirati su performance e sicurezza.",
+      "Sviluppo di portali evento con React.js e WordPress, integrando componenti interattivi e responsive design."
+    ],
+    "images": [
+      {
+        "src": "/images/projects/adnkronos/Adnkronos-Corporate.png",
+        "alt": "Adnkronos Corporate",
+        "width": 255,
+        "height": 143
+      },
+      {
+        "src": "/images/projects/adnkronos/Aki-Arabic-Adnkronos.png",
+        "alt": "Aki Arabic Adnkronos",
+        "width": 255,
+        "height": 143
+      }
+    ]
+  },
+  {
+    "id": "business-changers-2024",
+    "company": "BUSINESS CHANGERS",
+    "companyUrl": "https://business-changers.it/",
+    "role": "Full Stack Developer",
+    "period": "ago 2024 - ott 2024",
+    "achievements": [
+      "Ho contribuito allo sviluppo e alla manutenzione di piattaforme e-commerce e di una piattaforma per la gestione di asset cripto, collaborando con il team Innovation Labs.",
+      "Mi sono occupato dell'implementazione di nuove funzionalità e del bug fixing su front-end e back-end, con particolare attenzione a performance, usabilità e scalabilità.",
+      "Sul front-end ho utilizzato JavaScript, React.js, TypeScript e Next.js per ottimizzare la user experience e le prestazioni delle applicazioni.",
+      "Sul back-end ho lavorato con Node.js, Express e MongoDB, sviluppando API REST e ottimizzando la gestione dei dati."
+    ]
+  },
+  {
+    "id": "business-changers-2022",
+    "company": "BUSINESS CHANGERS",
+    "companyUrl": "https://business-changers.it/",
+    "role": "Full Stack Developer",
+    "period": "mar 2022 - lug 2024",
+    "consultingFor": {
+      "name": "CONI NET",
+      "url": "https://www.coninet.it/"
+    },
+    "achievements": [
+      "Ho collaborato allo sviluppo e alla manutenzione di siti web e portali, concentrandomi sull'ottimizzazione delle interfacce utente e sull'implementazione di soluzioni responsive.",
+      "Ho utilizzato tecnologie come HTML, CSS (SASS/LESS), JavaScript, jQuery, PHP, Joomla e diverse versioni di Bootstrap per garantire compatibilità cross-browser e mobile.",
+      "Negli ultimi mesi, ho integrato React.js su Joomla come headless CMS, modernizzando l'architettura front-end per migliorare flessibilità e prestazioni.",
+      "Mi sono inoltre occupato della migrazione e ottimizzazione di database MySQL, assicurando continuità operativa e maggiore efficienza delle query."
+    ],
+    "images": [
+      {
+        "src": "/images/projects/coni/Home-Sport-e-Salute.png",
+        "alt": "Sport e Salute",
+        "width": 255,
+        "height": 143
+      },
+      {
+        "src": "/images/projects/coni/Home-Piazza-di-Siena.png",
+        "alt": "Piazza di Siena",
+        "width": 255,
+        "height": 143
+      },
+      {
+        "src": "/images/projects/coni/Home-XXXIII-Giochi-Olimpici-Estivi-Parigi-2024.png",
+        "alt": "XXXIII Giochi Olimpici Estivi Parigi 2024",
+        "width": 255,
+        "height": 143
+      },
+      {
+        "src": "/images/projects/coni/Home-Comitato-Olimpico-Nazionale.png",
+        "alt": "Comitato Olimpico Nazionale",
+        "width": 255,
+        "height": 143
+      }
+    ]
+  },
+  {
+    "id": "accentra",
+    "company": "ACCENTRA",
+    "companyUrl": "https://accentra.it/",
+    "role": "Web Developer",
+    "period": "ott 2020 - feb 2022",
+    "achievements": [
+      "Sviluppo e manutenzione di siti web con interfacce utente dinamiche e responsive.",
+      "Implementazione di funzionalità interattive utilizzando HTML, CSS, JavaScript e jQuery.",
+      "Gestione dei contenuti tramite PHP e WordPress.",
+      "Integrazione di animazioni fluide con GSAP.",
+      "Utilizzo di Bootstrap 3/4 per garantire compatibilità cross-device."
+    ]
+  },
+  {
+    "id": "badgebox",
+    "company": "BADGEBOX",
+    "companyUrl": "https://www.badgebox.com/",
+    "role": "Jr. Web Developer",
+    "period": "feb 2020 - set 2020",
+    "achievements": [
+      "Sviluppo del back-end per una piattaforma di gestione ticket.",
+      "Progettazione e implementazione dell'architettura del database e delle API REST.",
+      "Gestione dell'autenticazione utenti e validazione dei dati.",
+      "Ottimizzazione delle prestazioni per migliorare l'esperienza utente.",
+      "Utilizzo di PHP e del framework Laravel per garantire un'interazione efficiente tra front-end e back-end."
+    ]
+  },
+  {
+    "id": "sicurform",
+    "company": "SICURFORM ITALIA GROUP",
+    "companyUrl": "https://www.sicurform.net/",
+    "role": "Docente Corso \"Digital Marketing Manager\"",
+    "period": "mag 2019 - ott 2019",
+    "achievements": [
+      "Concetti fondamentali di SEO e Web marketing.",
+      "Tecnologie utilizzate: HTML, CSS, CMS Wordpress."
+    ]
+  },
+  {
+    "id": "kosmos",
+    "company": "KOSMOS",
+    "role": "Graphic Designer e Consulente marketing digitale",
+    "period": "dic 2015 - apr 2019",
+    "achievements": [
+      "Creazione di identità visive attraverso logo design e branding.",
+      "Realizzazione di siti web ed e-commerce con CMS WordPress.",
+      "Analisi di mercato e attività di benchmarking per definire strategie competitive.",
+      "Elaborazione di report e analisi dei risultati delle campagne.",
+      "Pianificazione e gestione di strategie di marketing digitale.",
+      "Attività di web marketing, email marketing e social media marketing."
+    ]
+  }
+]

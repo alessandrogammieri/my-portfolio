@@ -1,12 +1,22 @@
 import Link from "next/link";
 import { social } from "@/data/social";
+import { WorkExperience, Education } from "@/lib/types";
 import Button from "../ui/Button";
 import { HiCalendarDays } from "react-icons/hi2";
-import WorkExperience from "./WorkExperience";
+import WorkExperiences from "./WorkExperience";
 import Study from "./Study";
 import TechnicalSkills from "./TechnicalSkills";
+import axios from "axios";
 
-export default function ProfileDescription() {
+export default async function ProfileDescription() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const { data: workExperiences } = await axios.get<WorkExperience[]>(
+    `${baseUrl}/data/workExperience.json`
+  );
+  const { data: educationList } = await axios.get<Education[]>(
+    `${baseUrl}/data/education.json`
+  );
+
   return (
     <div className="max-w-[40rem] w-full flex flex-col self-center md:self-auto flex-9 relative">
       <div
@@ -60,10 +70,10 @@ export default function ProfileDescription() {
         continuo e all'evoluzione tecnologica.
       </div>
       <div id="work-experience" className="md:scroll-mt-20">
-        <WorkExperience />
+        <WorkExperiences experiences={workExperiences} />
       </div>
       <div id="study" className="md:scroll-mt-20">
-        <Study />
+        <Study educationList={educationList} />
       </div>
       <div id="technical-skills" className="md:scroll-mt-20">
         <TechnicalSkills />

@@ -3,10 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { workExperiences } from "@/data/workExperience";
+import { WorkExperience as WorkExperienceType } from "@/lib/types";
 import Lightbox from "@/components/ui/Lightbox";
 
-export default function WorkExperience() {
+interface WorkExperienceProps {
+  experiences: WorkExperienceType[];
+}
+
+export default function WorkExperience({ experiences }: WorkExperienceProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
@@ -31,7 +35,7 @@ export default function WorkExperience() {
         Esperienze
       </h2>
       <div className="min-w-0 w-full flex flex-col gap-10 relative mb-10">
-        {workExperiences.map((experience) => (
+        {experiences.map((experience) => (
           <div
             key={experience.id}
             className="min-w-0 w-full flex flex-col relative"

@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { educationList } from "@/data/education";
+import { Education } from "@/lib/types";
 
-export default function Study() {
+interface StudyProps {
+  educationList: Education[];
+}
+
+export default function Study({ educationList }: StudyProps) {
   return (
     <div className="min-w-0 w-full relative">
       <h2 className="text-3xl md:text-4xl font-semibold text-balance mb-6">

@@ -32,18 +32,65 @@ export interface ProjectsSliderProps {
   count?: number;
 }
 
+// Project Showcase (Homepage Sections)
+export type ProjectShowcaseMediaType = 'slider' | 'video' | 'single-image';
+
+export interface ProjectShowcaseAvatar {
+  src: string;
+  alt: string;
+}
+
+export interface ProjectShowcaseSection {
+  id: string;
+  title: string;
+  description: string;
+  linkText: string;
+  linkHref: string;
+  avatars: ProjectShowcaseAvatar[];
+  mediaType: ProjectShowcaseMediaType;
+  // Per slider - array di progetti da mostrare
+  projects?: Project[];
+  // Per video
+  videoSrc?: string;
+  // Per singola immagine
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
 // Blog
+export interface BlogContentSection {
+  type: 'heading' | 'paragraph' | 'list' | 'code';
+  content: string | string[];
+  language?: string; // Per code blocks
+}
+
 export interface BlogPost {
   id: string;
   title: string;
-  excerpt: string;
+  category: string;
   content: string;
+  fullContent?: BlogContentSection[]; // Contenuto strutturato per la pagina del singolo post
   publishedAt: string;
   updatedAt?: string;
   tags: string[];
   featured: boolean;
   image?: string;
+  coverImage?: string; // Immagine hero per la pagina del singolo post
   readTime: number;
+  slug: string;
+  author: string;
+  authorAvatar: string;
+}
+
+export interface BlogCardProps {
+  post: BlogPost;
+  variant?: 'featured' | 'standard' | 'minimal';
+}
+
+export interface BlogPostSection {
+  title?: string;
+  posts: BlogPost[];
+  layout: 'single' | 'grid';
 }
 
 // Work Experience
