@@ -1,145 +1,303 @@
 [
   {
     "id": "1",
-    "title": "Quick start with Magic Portfolio",
-    "category": "Magic Portfolio",
-    "content": "Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration.",
-    "publishedAt": "23 Aprile 2025",
-    "tags": ["Next.js", "React"],
+    "title": "Server Components vs Client Components in Next.js 15",
+    "category": "Next.js",
+    "content": "Una guida pratica per capire quando usare Server Components e Client Components in Next.js 15, con esempi reali e best practices per ottimizzare le performance della tua applicazione.",
+    "publishedAt": "5 Dicembre 2024",
+    "tags": ["Next.js", "React", "Performance"],
     "featured": true,
     "image": "/images/projects/image.jpeg",
     "coverImage": "/images/projects/image2.jpeg",
-    "readTime": 5,
-    "slug": "my-first-post",
+    "readTime": 8,
+    "slug": "server-vs-client-components-nextjs",
     "author": "Alessandro Gammieri",
     "authorAvatar": "/images/avatar.jpeg",
     "fullContent": [
       {
         "type": "heading",
-        "content": "Overview"
+        "content": "Il paradigma dei Server Components"
       },
       {
         "type": "paragraph",
-        "content": "Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration."
+        "content": "Con Next.js 13 e l'App Router, React ha introdotto un nuovo paradigma: i Server Components. Questi componenti vengono renderizzati esclusivamente sul server, riducendo drasticamente la quantità di JavaScript inviata al client."
       },
       {
         "type": "heading",
-        "content": "Key Features"
+        "content": "Quando usare Server Components"
+      },
+      {
+        "type": "paragraph",
+        "content": "I Server Components sono la scelta ideale quando:"
       },
       {
         "type": "list",
         "content": [
-          "**Component Library**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.",
-          "**Design Tokens**: Implemented a comprehensive set of design tokens for colors, typography, spacing, and other visual properties.",
-          "**Documentation**: Created detailed documentation for each component with examples and best practices."
+          "**Fetch di dati**: Quando devi recuperare dati dal database o da API esterne",
+          "**Accesso a risorse backend**: Per operazioni che richiedono variabili d'ambiente segrete o accesso diretto al filesystem",
+          "**Riduzione del bundle**: Per componenti statici che non necessitano di interattività",
+          "**SEO**: Quando il contenuto deve essere indicizzato dai motori di ricerca"
         ]
       },
       {
-        "type": "heading",
-        "content": "Installation"
+        "type": "code",
+        "content": "// Server Component (default in App Router)\nexport default async function BlogPost({ params }) {\n  const post = await db.post.findUnique({\n    where: { slug: params.slug }\n  });\n  \n  return (\n    <article>\n      <h1>{post.title}</h1>\n      <div>{post.content}</div>\n    </article>\n  );\n}",
+        "language": "typescript"
       },
       {
-        "type": "code",
-        "content": "npm install magic-portfolio",
-        "language": "bash"
+        "type": "heading",
+        "content": "Quando usare Client Components"
       },
       {
         "type": "paragraph",
-        "content": "After installation, you can start using the components in your Next.js application."
+        "content": "I Client Components sono necessari quando il componente richiede interattività o accesso alle API del browser:"
+      },
+      {
+        "type": "list",
+        "content": [
+          "**Hooks di React**: useState, useEffect, useContext e altri hooks",
+          "**Event handlers**: onClick, onChange, onSubmit, ecc.",
+          "**API del browser**: localStorage, window, document",
+          "**Librerie interattive**: Chart.js, React Query (lato client), ecc."
+        ]
+      },
+      {
+        "type": "code",
+        "content": "'use client'\n\nimport { useState } from 'react'\n\nexport default function Counter() {\n  const [count, setCount] = useState(0)\n  \n  return (\n    <button onClick={() => setCount(count + 1)}>\n      Clicks: {count}\n    </button>\n  )\n}",
+        "language": "typescript"
+      },
+      {
+        "type": "heading",
+        "content": "Pattern: Composizione Server + Client"
+      },
+      {
+        "type": "paragraph",
+        "content": "La strategia migliore è combinare entrambi: usa Server Components per il layout e il fetch dei dati, e Client Components solo dove necessario per l'interattività."
+      },
+      {
+        "type": "code",
+        "content": "// app/blog/page.tsx (Server Component)\nimport BlogList from '@/components/BlogList' // Client\n\nexport default async function BlogPage() {\n  const posts = await fetchPosts() // Eseguito sul server\n  \n  return (\n    <div>\n      <h1>Blog</h1>\n      <BlogList posts={posts} /> {/* Client Component */}\n    </div>\n  )\n}",
+        "language": "typescript"
+      },
+      {
+        "type": "heading",
+        "content": "Best Practices"
+      },
+      {
+        "type": "list",
+        "content": [
+          "**Default Server**: Mantieni i componenti come Server Components a meno che non servano funzionalità client",
+          "**Sposta i Client Components in basso**: Posiziona la direttiva 'use client' il più in basso possibile nell'albero dei componenti",
+          "**Passa dati serializzabili**: I props tra Server e Client Components devono essere serializzabili in JSON",
+          "**Evita prop drilling**: Usa React Context solo nei Client Components quando necessario"
+        ]
       }
     ]
   },
   {
     "id": "2",
-    "title": "Quick start with Magic Portfolio",
-    "category": "Magic Portfolio",
-    "content": "Content here...",
-    "publishedAt": "23 Aprile 2025",
-    "tags": ["TypeScript"],
+    "title": "Design System scalabile con Tailwind CSS",
+    "category": "Design",
+    "content": "Come costruire un design system manutenibile e scalabile utilizzando Tailwind CSS, con focus su design tokens, componenti riutilizzabili e dark mode.",
+    "publishedAt": "28 Novembre 2024",
+    "tags": ["CSS", "Tailwind", "Design System"],
     "featured": false,
     "image": "/images/projects/image.jpeg",
-    "readTime": 3,
-    "slug": "second-post",
-    "author": "agDeveloper",
-    "authorAvatar": "/images/avatar.jpeg"
+    "readTime": 7,
+    "slug": "design-system-tailwind",
+    "author": "Alessandro Gammieri",
+    "authorAvatar": "/images/avatar.jpeg",
+    "fullContent": [
+      {
+        "type": "heading",
+        "content": "Fondamenta: Design Tokens"
+      },
+      {
+        "type": "paragraph",
+        "content": "I design tokens sono il cuore di un design system. Definiscono colori, spacing, tipografia e altri valori riutilizzabili in tutta l'applicazione."
+      },
+      {
+        "type": "code",
+        "content": "// tailwind.config.ts\nexport default {\n  theme: {\n    extend: {\n      colors: {\n        primary: {\n          50: '#f0f9ff',\n          500: '#0891b2',\n          900: '#164e63',\n        },\n        background: {\n          light: '#ffffff',\n          dark: '#0a0a0a',\n        }\n      },\n      spacing: {\n        '18': '4.5rem',\n        '88': '22rem',\n      },\n    },\n  },\n}",
+        "language": "typescript"
+      },
+      {
+        "type": "heading",
+        "content": "Componenti riutilizzabili"
+      },
+      {
+        "type": "paragraph",
+        "content": "Crea componenti base con varianti utilizzando le utility classes di Tailwind in modo consistente."
+      },
+      {
+        "type": "code",
+        "content": "// Button.tsx\nconst variants = {\n  primary: 'bg-primary-500 text-white hover:bg-primary-600',\n  secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300',\n  ghost: 'bg-transparent hover:bg-gray-100',\n}\n\nexport default function Button({ variant = 'primary', children }) {\n  return (\n    <button className={`px-4 py-2 rounded-lg ${variants[variant]}`}>\n      {children}\n    </button>\n  )\n}",
+        "language": "typescript"
+      },
+      {
+        "type": "heading",
+        "content": "Dark Mode nativo"
+      },
+      {
+        "type": "paragraph",
+        "content": "Tailwind supporta nativamente il dark mode. Usa la strategia basata su classi o media query."
+      },
+      {
+        "type": "code",
+        "content": "// tailwind.config.ts\nexport default {\n  darkMode: 'class', // o 'media'\n  // ...\n}\n\n// Component\n<div className=\"bg-white dark:bg-gray-900\">\n  <h1 className=\"text-gray-900 dark:text-white\">\n    Hello World\n  </h1>\n</div>",
+        "language": "typescript"
+      },
+      {
+        "type": "heading",
+        "content": "Ottimizzazione"
+      },
+      {
+        "type": "list",
+        "content": [
+          "**PurgeCSS**: Tailwind rimuove automaticamente le classi non utilizzate in produzione",
+          "**Custom utilities**: Crea utility personalizzate per pattern ricorrenti",
+          "**Plugins**: Estendi Tailwind con plugin per funzionalità avanzate",
+          "**Theme organization**: Organizza i token in file separati per team di design"
+        ]
+      }
+    ]
   },
   {
     "id": "3",
-    "title": "Quick start with Magic Portfolio",
-    "category": "Magic Portfolio",
-    "content": "Content here...",
-    "publishedAt": "23 Aprile 2025",
-    "tags": ["Design"],
+    "title": "TypeScript: Generics avanzati per API type-safe",
+    "category": "TypeScript",
+    "content": "Scopri come utilizzare i generics avanzati di TypeScript per creare API type-safe, riducendo gli errori e migliorando l'esperienza di sviluppo con autocompletamento intelligente.",
+    "publishedAt": "15 Novembre 2024",
+    "tags": ["TypeScript", "Type Safety"],
     "featured": false,
     "image": "/images/projects/image.jpeg",
-    "readTime": 4,
-    "slug": "third-post",
-    "author": "agDeveloper",
-    "authorAvatar": "/images/avatar.jpeg"
+    "readTime": 9,
+    "slug": "typescript-generics-avanzati",
+    "author": "Alessandro Gammieri",
+    "authorAvatar": "/images/avatar.jpeg",
+    "fullContent": [
+      {
+        "type": "heading",
+        "content": "Il potere dei Generics"
+      },
+      {
+        "type": "paragraph",
+        "content": "I generics permettono di scrivere codice riutilizzabile mantenendo la type safety. Sono fondamentali per creare API flessibili e sicure."
+      },
+      {
+        "type": "code",
+        "content": "// Funzione fetch generica type-safe\nasync function fetchData<T>(url: string): Promise<T> {\n  const response = await fetch(url)\n  return response.json() as T\n}\n\n// Utilizzo con autocompletamento\ninterface User {\n  id: number\n  name: string\n  email: string\n}\n\nconst user = await fetchData<User>('/api/user/1')\nconsole.log(user.name) // ✅ Autocompletamento!",
+        "language": "typescript"
+      },
+      {
+        "type": "heading",
+        "content": "Constraints sui Generics"
+      },
+      {
+        "type": "paragraph",
+        "content": "Usa i constraints per limitare i tipi accettati dai generics, garantendo che abbiano determinate proprietà."
+      },
+      {
+        "type": "code",
+        "content": "interface HasId {\n  id: string | number\n}\n\n// Accetta solo tipi con proprietà 'id'\nfunction findById<T extends HasId>(items: T[], id: string | number): T | undefined {\n  return items.find(item => item.id === id)\n}\n\nconst users = [{ id: 1, name: 'Mario' }]\nconst found = findById(users, 1) // ✅ Type: { id: number, name: string }",
+        "language": "typescript"
+      },
+      {
+        "type": "heading",
+        "content": "Mapped Types e Utility Types"
+      },
+      {
+        "type": "paragraph",
+        "content": "Combina i generics con mapped types per trasformazioni avanzate dei tipi."
+      },
+      {
+        "type": "code",
+        "content": "// Rendi tutte le proprietà opzionali\ntype Optional<T> = {\n  [K in keyof T]?: T[K]\n}\n\n// Rendi tutte le proprietà readonly\ntype Immutable<T> = {\n  readonly [K in keyof T]: T[K]\n}\n\n// Esempio pratico\ninterface User {\n  id: number\n  name: string\n  email: string\n}\n\ntype UserUpdate = Optional<User> // Tutte le props opzionali\ntype ImmutableUser = Immutable<User> // Tutte readonly",
+        "language": "typescript"
+      },
+      {
+        "type": "heading",
+        "content": "Conditional Types"
+      },
+      {
+        "type": "paragraph",
+        "content": "I conditional types permettono di creare tipi che si adattano in base alle condizioni."
+      },
+      {
+        "type": "code",
+        "content": "// Unwrap Promise type\ntype Awaited<T> = T extends Promise<infer U> ? U : T\n\ntype A = Awaited<Promise<string>> // string\ntype B = Awaited<number> // number\n\n// API Response type\ntype ApiResponse<T> = T extends { error: any }\n  ? { success: false; error: string }\n  : { success: true; data: T }",
+        "language": "typescript"
+      }
+    ]
   },
   {
     "id": "4",
-    "title": "Quick start with Magic Portfolio",
-    "category": "Magic Portfolio",
-    "content": "Content here...",
-    "publishedAt": "23 Aprile 2025",
-    "tags": ["Development"],
+    "title": "React Query: Gestione dello stato server semplificata",
+    "category": "React",
+    "content": "Una guida completa a React Query (TanStack Query) per gestire chiamate API, caching, sincronizzazione e ottimizzazione delle performance in applicazioni React moderne.",
+    "publishedAt": "8 Novembre 2024",
+    "tags": ["React", "React Query", "State Management"],
     "featured": false,
+    "image": "/images/projects/image.jpeg",
     "readTime": 6,
-    "slug": "fourth-post",
-    "author": "agDeveloper",
+    "slug": "react-query-guida-completa",
+    "author": "Alessandro Gammieri",
     "authorAvatar": "/images/avatar.jpeg"
   },
   {
     "id": "5",
-    "title": "Quick start",
-    "category": "Magic Portfolio",
-    "content": "Content here...",
-    "publishedAt": "23 Aprile 2025",
-    "tags": ["Tutorial"],
+    "title": "Ottimizzazione delle performance in Next.js",
+    "category": "Performance",
+    "content": "Tecniche avanzate per ottimizzare le performance di applicazioni Next.js: code splitting, image optimization, caching strategies e Core Web Vitals.",
+    "publishedAt": "1 Novembre 2024",
+    "tags": ["Next.js", "Performance", "Web Vitals"],
     "featured": false,
-    "readTime": 7,
-    "slug": "fifth-post",
-    "author": "agDeveloper",
+    "image": "/images/projects/image.jpeg",
+    "readTime": 10,
+    "slug": "ottimizzazione-performance-nextjs",
+    "author": "Alessandro Gammieri",
     "authorAvatar": "/images/avatar.jpeg"
   },
   {
     "id": "6",
-    "title": "Quick start with Magic Portfolio",
-    "category": "Magic Portfolio",
-    "content": "Content here...",
-    "publishedAt": "23 Aprile 2025",
-    "tags": ["Guide"],
+    "title": "Atomic Design: Costruire UI modulari e scalabili",
+    "category": "Design",
+    "content": "Il metodo Atomic Design applicato a progetti React moderni: da atomi a template, per creare interfacce consistenti e manutenibili.",
+    "publishedAt": "25 Ottobre 2024",
+    "tags": ["Design", "React", "Architecture"],
     "featured": false,
-    "readTime": 2,
-    "slug": "sixth-post",
-    "author": "agDeveloper",
+    "image": "/images/projects/image.jpeg",
+    "readTime": 7,
+    "slug": "atomic-design-react",
+    "author": "Alessandro Gammieri",
     "authorAvatar": "/images/avatar.jpeg"
   },
   {
     "id": "7",
-    "title": "Quick start with Magic Portfolio",
-    "category": "Magic Portfolio",
-    "content": "Content here...",
-    "publishedAt": "23 Aprile 2025",
-    "tags": ["Best Practices"],
+    "title": "Git Flow per team di sviluppo: best practices",
+    "category": "DevOps",
+    "content": "Come organizzare il workflow Git in team: branching strategies, conventional commits, pull request reviews e automazione con GitHub Actions.",
+    "publishedAt": "18 Ottobre 2024",
+    "tags": ["Git", "DevOps", "Workflow"],
     "featured": false,
+    "image": "/images/projects/image.jpeg",
     "readTime": 8,
-    "slug": "seventh-post",
-    "author": "agDeveloper",
+    "slug": "git-flow-best-practices",
+    "author": "Alessandro Gammieri",
     "authorAvatar": "/images/avatar.jpeg"
   },
   {
     "id": "8",
-    "title": "Quick start with Magic Portfolio",
-    "category": "Magic Portfolio",
-    "content": "Content here...",
-    "publishedAt": "23 Aprile 2025",
-    "tags": ["Tips"],
+    "title": "Accessibilità Web: da WCAG 2.1 alla pratica",
+    "category": "Accessibility",
+    "content": "Guida pratica per rendere le tue web app accessibili: semantic HTML, ARIA attributes, keyboard navigation e testing con screen readers.",
+    "publishedAt": "10 Ottobre 2024",
+    "tags": ["Accessibility", "Web Standards", "UX"],
     "featured": false,
-    "readTime": 3,
-    "slug": "eighth-post",
-    "author": "agDeveloper",
+    "image": "/images/projects/image.jpeg",
+    "readTime": 9,
+    "slug": "accessibilita-web-wcag",
+    "author": "Alessandro Gammieri",
     "authorAvatar": "/images/avatar.jpeg"
   }
 ]
